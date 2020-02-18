@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Which Bill Murray Are You?</title>
   <link href="styles.css" type="text/css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>Which Bill Murray?</h1>
-  </header>
-  <aside></aside>
-  <main class="game-page">
-<div class="box card-1"></div>
-<div class="box card-2"></div>
-<div class="box card-3"></div>
-<div class="box card-4"></div>
-<div class="box card-5"></div>
-<div class="box card-6"></div>
-<div class="box card-7"></div>
-<div class="box card-8"></div>
-<div class="box card-9"></div>
-<div class="box card-10"></div>
 
-  </main>
-  <main hidden class="win-page"></main>
+<body>
+  <!-- first page, play game -->
+    <header>
+      <h1>Which Bill Murray?</h1>
+    </header>
+    <aside>
+      <p>MATCHES</p>
+      <p>THIS ROUND</p>
+      <p class="num-of-matches">0</p>
+      <section class="matched-cards-area">
+        <div class="matched-1"></div>
+        <div class="matched-2"></div>
+        <div class="matched-3"></div>
+        <div class="matched-4"></div>
+        <div class="matched-5"></div>
+      </section>
+      <section class="top-times">
+        <p>TOP 3 TIMES:</p>
+        <p>2 MINS 6 SECS</p>
+        <p>3 MINS 5 SECS</p>
+        <p>3 MINS 7 SECS</p>
+      </section>
+    </aside>
+    <main  class="game-page">
+      <div class="box placeholder-1">B</div>
+      <div class="box placeholder-2">B</div>
+      <div class="box placeholder-3">B</div>
+      <div class="box placeholder-4">B</div>
+      <div class="box placeholder-5">B</div>
+      <div class="box placeholder-6">B</div>
+      <div class="box placeholder-7">B</div>
+      <div class="box placeholder-8">B</div>
+      <div class="box placeholder-9">B</div>
+      <div class="box placeholder-10">B</div>
+    </main>
+
+  <!-- winner page -->
+  <section hidden class="win-page">
+    <h2>Congratulations</h2>
+    <h3>All 5 matches were found in</h3>
+    <p class="time-played">2 MINS  6 SECS</p>
+    <button class="play-again">Play Again</button>
+    <button class="new-game">New Game</button>
+  </section>
 </body>
-<script type="text/javascript" src="main.js" ></script>
-<script type="text/javascript" src="deck.js" ></script>
-<script type="text/javascript" src="card.js" ></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="deck.js"></script>
+<script type="text/javascript" src="placeholder.js"></script>

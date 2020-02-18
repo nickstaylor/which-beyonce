@@ -1,0 +1,41 @@
+* {
+  font-family: arial, sans-serif;
+}
+
+body {
+  background-color: #2B2733;
+  color: #CBC9CF;
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "aside main main main main";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 90px 100vh;
+  height: 100vh;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+header {
+  background-color: #FFF;
+  color: black;
+  grid-area: header;
+  text-align: center;
+}
+
+aside {
+  background-color: black;
+  grid-area: aside;
+  text-align: center;
+}
+
+main {
+  background-color: lightgrey;
+  grid-area: main;
+}
+
+.win-page {
+  background-image: url("assets/images/Bill-Murray-Space-Jam.jpeg");
+  grid-area: aside / main;
+}

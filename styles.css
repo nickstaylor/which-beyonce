@@ -69,3 +69,27 @@ h3 {
   padding: 20px 40px;
   margin: 0px 40px;
 }
+
+.box {
+  border: 3px solid black;
+  text-align: center;
+  height: 100px;
+  width: 50px;
+
+}
+
+.num-of-matches{
+
+}
+
+.matched-cards {
+
+}
+
+.top-times{
+  text-align: center;
+}
+
+.matched-cards-area div {
+
+}

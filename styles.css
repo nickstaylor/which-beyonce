@@ -152,7 +152,16 @@ h3 {
 }
 
 .num-of-matches{
+  font-size: 100px;
+  font-weight: bold;
+}
 
+aside p {
+  margin: 0px;
+}
+
+.matches {
+  margin-top: 50px;
 }
 
 .matched-cards {
@@ -161,8 +170,21 @@ h3 {
 
 .top-times{
   text-align: center;
+  margin-top: 100px;
+}
+
+.top-times p {
+  padding: 10px;
 }
 
 .matched-cards-area div {
-
+  border: 3px solid black;
+  text-align: center;
+  height: 80px;
+  width: 60px;
+  display: inline-block;
+  color: black;
+  background-color: gray;
+  font-size: 50px;
+  margin: 10px 10px;
 }

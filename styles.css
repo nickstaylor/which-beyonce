@@ -73,9 +73,82 @@ h3 {
 .box {
   border: 3px solid black;
   text-align: center;
-  height: 100px;
-  width: 50px;
+  height: 175px;
+  width: 125px;
+  display: inline-block;
+  color: black;
+  background-color: #FFF;
+  font-size: 50px;
+}
 
+/* individual placeholders positioning */
+.placeholder-1 {
+  position: relative;
+  top: 100px;
+  left: 25px;
+  transform: rotate(5deg);
+}
+
+.placeholder-2 {
+  position: relative;
+  top: 40px;
+  left: 120px;
+  transform: rotate(-15deg);
+}
+
+.placeholder-3 {
+  position: relative;
+  top: 20px;
+  left: 250px;
+  transform: rotate(-20deg)
+}
+
+.placeholder-4 {
+  position: relative;
+  top: 20px;
+  left: 350px;
+  transform: rotate(15deg)
+}
+
+.placeholder-5 {
+  position: relative;
+  top: 250px;
+  right: 200px;
+  transform: rotate(15deg)
+}
+
+.placeholder-6 {
+  position: relative;
+  top: 250px;
+  left: 50px;
+  transform: rotate(-15deg);
+}
+
+.placeholder-7 {
+  position: relative;
+  top: 120px;
+  left: 175px;
+}
+
+.placeholder-8 {
+  position: relative;
+  top: 350px;
+  right: 800px;
+  transform: rotate(-35deg);
+}
+
+.placeholder-9 {
+  position: relative;
+  top: 175px;
+  left: 550px;
+  transform: rotate(20deg);
+}
+
+.placeholder-10 {
+  position: relative;
+  top: 180px;
+  left: 800px;
+  transform: rotate(-20deg);
 }
 
 .num-of-matches{

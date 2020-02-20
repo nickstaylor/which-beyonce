@@ -1,7 +1,7 @@
 class Card {
-  constructor(matchInfo) {
+  constructor() {
     // need to match other same pic, 1,2,3,4,5 or A,B,C,D,E
-    this.matchInfo = matchInfo;
+    this.matchInfo;
     this.matched = false;
   }
   match() {
@@ -9,3 +9,6 @@ class Card {
     // this.matched= true;
   }
 }
+
+
+console.log('test-card')

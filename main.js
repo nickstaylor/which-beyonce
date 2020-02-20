@@ -1,3 +1,5 @@
+var cardOne = new Card('assets/images')
+
 var deck = new Deck();
 window.addEventListener('load', callDeck)
 

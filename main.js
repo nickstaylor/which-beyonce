@@ -29,22 +29,24 @@ function callDeck() {
 var gamePage = document.querySelector('.game-page')
 gamePage.addEventListener('click', selectCard);
 
+
 // function loadImagesToCards() {
-//   console.log(select)
 //   var select = event.target;
+//   console.log(select);
 //   for (var i = 0; i < 10; i++) {
-//     gamePage.insertAdjacentHTML('beforeend',
-//     `'<div class="box placeholder-${[i]}">
-//       <img class="hide" src=${deck.cards[i].image} />
-//     </div>
-//     '`
-//     )
+//     if (event.target.classList.contains(`placeholder-${[i]}`)) {
+//     currentDiv.innerHTML = `<img class="hide" src=${deck.cards[i].image} />`
 //   }
 // }
-function displayCards() {
+// }
+
+function loadImagesToCards() {
+  console.log(select)
+  var select = event.target;
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `'<div class="box placeholder-${[i]}">
+    `'<div class="box negZ card-image image-placeholder-${[i]}">
+      <img class="" src=${deck.cards[i].image} />
     </div>
     '`
     )
@@ -52,23 +54,39 @@ function displayCards() {
 }
 
 
-function loadImagesToCards() {
-  console.log(select)
-  var select = event.target;
+function displayCards() {
   for (var i = 0; i < 10; i++) {
-    var currentDiv = document.querySelector('`placeholder-${[i]}`')
-    currentDiv.innerHTML =
-    `'
-      <img class="hide" src=${deck.cards[i].image} />
-
+    gamePage.insertAdjacentHTML('beforeend',
+    `'<div class="box card-placeholder-${[i]}">
+    </div>
     '`
+    )
   }
 }
+
 function selectCard(event) {
   var selected = event.target
+
   console.log(selected)
-  selected.classList.remove('hide')
+  // selected.classList.add('negZ')
+  selected.classList.add('negZ')
+  
+  // selected.classList.remove('hide')
 }
+
+// function loadImagesToCards() {
+//   console.log(select)
+//   var select = event.target;
+//   for (var i = 0; i < 10; i++) {
+//     var currentDiv = document.querySelector('`placeholder-${[i]}`')
+//     currentDiv.innerHTML =
+//     `'
+//       <img class="hide" src=${deck.cards[i].image} />
+//
+//     '`
+//   }
+// }
+
 
 
 // <img src=${deck.cards[i].image} />

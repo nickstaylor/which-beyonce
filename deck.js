@@ -12,15 +12,7 @@ shuffle(){
 //   if (i < 2) {
 //       this.cards[i].classList.add('caddyshack')
 //     } else if ((i === 2) || (i === 3)) {
-//       this.cards[i].classList.add('ghostbusters')
-//     } else if ((i === 4) || (i === 5)) {
-//       this.cards[i].classList.add('kingpin')
-//     } else if ((i === 6) || (i === 7)) {
-//       this.cards[i].classList.add('lifeaquatic')
-//     } else {
-//       this.cards[i].classList.add('rushmore')
-//     }
-//   }
+//       this.cards[i].classList.add('ghostba
 }
 
 checkSelectedCards(){
@@ -31,10 +23,9 @@ checkSelectedCards(){
 moveToMatched(){
 // move matched cards to matchedCards array
 }
- createDeck() {
-   for (var i = 0; i < 10; i++) {
-     var card = new Card();
-     this.cards.push(card);
-   }
- }
+ // addCardsToDeck() {
+ //    for (var i = 0; i < 5; i++) {
+ //      this.cards.push(card);
+ //    }
+ //  }
 }

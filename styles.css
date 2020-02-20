@@ -30,6 +30,10 @@ aside {
   text-align: center;
 }
 
+.game-page{
+  position: relative;
+}
+
 main {
   background-color: lightgrey;
   grid-area: main;
@@ -79,6 +83,8 @@ h3 {
   color: black;
   background-color: #FFF;
   font-size: 50px;
+  /* padding-top: 30px;  */
+
 }
 
 .game-page img {
@@ -87,72 +93,74 @@ h3 {
 }
 
 /* individual placeholders positioning */
+.placeholder-0 {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  transform: rotate(10deg);
+}
+
 .placeholder-1 {
-  position: relative;
-  top: 100px;
-  left: 25px;
-  transform: rotate(5deg);
+  position: absolute;
+
+  top: 15%;
+  left: 30%;
+  transform: rotate(-10deg);
 }
 
 .placeholder-2 {
-  position: relative;
-  top: 40px;
-  left: 120px;
-  transform: rotate(-15deg);
-}
-
-.placeholder-3 {
-  position: relative;
-  top: 20px;
-  left: 250px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
   transform: rotate(-20deg)
 }
 
+.placeholder-3 {
+  position: absolute;
+  top: 15%;
+  left: 70%;
+  transform: rotate(15deg)
+}
+
 .placeholder-4 {
-  position: relative;
-  top: 50px;
-  left: 375px;
+  position: absolute;
+  top: 35%;
+  left: 20%;
   transform: rotate(15deg)
 }
 
 .placeholder-5 {
-  position: relative;
-  top: 275px;
-  right: 325px;
-  transform: rotate(15deg)
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: rotate(-10deg);
 }
 
 .placeholder-6 {
-  position: relative;
-  top: 300px;
-  right: 150px;
-  transform: rotate(-15deg);
+  position: absolute;
+  top: 37%;
+  left: 60%;
+  transform: rotate(15deg);
 }
 
 .placeholder-7 {
-  position: relative;
-  top: 275px;
-  left: 75px;
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: rotate(-25deg);
 }
 
 .placeholder-8 {
-  position: relative;
-  top: 450px;
-  right: 900px;
-  transform: rotate(-35deg);
-}
-
-.placeholder-9 {
-  position: relative;
-  top: 450px;
-  right: 750px;
+  position: absolute;
+  top: 60%;
+  left: 40%;
   transform: rotate(20deg);
 }
 
-.placeholder-10 {
-  position: relative;
-  top: 450px;
-  right: 500px;
+.placeholder-9 {
+  position: absolute;
+  top: 60%;
+  left: 60%;
   transform: rotate(-20deg);
 }
 
@@ -185,13 +193,13 @@ aside p {
 .matched-cards-area div {
   border: 3px solid black;
   text-align: center;
-  height: 80px;
-  width: 60px;
+  height: 90px;
+  width: 70px;
   display: inline-block;
   color: black;
   background-color: gray;
   font-size: 50px;
-  margin: 10px 10px;
+  margin: 5% 5%;
 }
 
 /* classes to add picture */
@@ -224,4 +232,9 @@ aside p {
   background-image: url("assets/images/Rushmore.jpeg");
   height: 175px;
   width: 125px;
+}
+
+
+.hide {
+  display: none;
 }

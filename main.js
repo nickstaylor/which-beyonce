@@ -1,41 +1,78 @@
 var deck = new Deck();
+
 var cardOne = new Card('a', 'assets/images/Caddyshack.jpg');
 var cardTwo = new Card('b', 'assets/images/Ghostbusters.jpg');
-var cardThree = new Card('c');
-var cardFour = new Card();
-var cardFive = new Card();
+var cardThree = new Card('c', 'assets/images/Kingpin.jpg');
+var cardFour = new Card('d', 'assets/images/LifeAquatic.jpg');
+var cardFive = new Card('e', 'assets/images/Rushmore.jpeg');
 
 function addCardsToDeck() {
+  for (var i = 0; i < 2; i++) {
      deck.cards.push(cardOne);
      deck.cards.push(cardTwo);
      deck.cards.push(cardThree);
      deck.cards.push(cardFour);
      deck.cards.push(cardFive);
    }
-
+ }
 window.addEventListener('load', callDeck)
-
-
-
-
-// function callDeck() {
-//   // deck.createDeck()
-//   displayDeck()
-// }
+function callDeck() {
+  addCardsToDeck();
+  displayCards()
+  loadImagesToCards()
+  // deck.createDeck()
+  // displayCards()
+}
 
 var gamePage = document.querySelector('.game-page')
-// gamePage.addEventListener('click', showImage);
+gamePage.addEventListener('click', selectCard);
 
-function displayDeck() {
-  var cardNum = 0;
-  for (var i = 1; i < 11; i++) {
+// function loadImagesToCards() {
+//   console.log(select)
+//   var select = event.target;
+//   for (var i = 0; i < 10; i++) {
+//     gamePage.insertAdjacentHTML('beforeend',
+//     `'<div class="box placeholder-${[i]}">
+//       <img class="hide" src=${deck.cards[i].image} />
+//     </div>
+//     '`
+//     )
+//   }
+// }
+function displayCards() {
+  for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-     `'<div class="box placeholder-${[i]}">
-     <img src=${deck.cards[i].image} />
-     </div>
-     '`)
-   }
- }
+    `'<div class="box placeholder-${[i]}">
+    </div>
+    '`
+    )
+  }
+}
+
+
+function loadImagesToCards() {
+  console.log(select)
+  var select = event.target;
+  for (var i = 0; i < 10; i++) {
+    var currentDiv = document.querySelector('`placeholder-${[i]}`')
+    currentDiv.innerHTML =
+    `'
+      <img class="hide" src=${deck.cards[i].image} />
+
+    '`
+  }
+}
+function selectCard(event) {
+  var selected = event.target
+  console.log(selected)
+  selected.classList.remove('hide')
+}
+
+
+// <img src=${deck.cards[i].image} />
+
+
+
 
 
 // function showImage(event) {

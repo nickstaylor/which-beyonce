@@ -34,6 +34,7 @@ moveToMatched(){
  createDeck() {
    for (var i = 0; i < 10; i++) {
      var card = new Card();
+     //code for adding [i] to name of each card
      this.cards.push(card);
    }
  }

@@ -45,8 +45,8 @@ function loadImagesToCards() {
   var select = event.target;
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `'<div class="box negZ card-image image-placeholder-${[i]}">
-      <img class="" src=${deck.cards[i].image} />
+    `'<div class="box card-image image-placeholder-${[i]}">
+      <img class="card-image" src=${deck.cards[i].image} />
     </div>
     '`
     )
@@ -57,7 +57,7 @@ function loadImagesToCards() {
 function displayCards() {
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `'<div class="box card-placeholder-${[i]}">
+    `'<div class="box z2 card-holder card-placeholder-${[i]}">
     </div>
     '`
     )
@@ -66,12 +66,18 @@ function displayCards() {
 
 function selectCard(event) {
   var selected = event.target
+  var cardHolder = document.querySelector('.card-holder')
+  var image = document.querySelector('.card-image')
+  if (selected.classList.contains('card-holder')) {
+    cardHolder.classList.add('negZ')
+    image.classList.add('z2')
+  console.log('CARD')
+} else if (selected.classList.contains('card-image')) {
+  console.log('IMAGE')
+  cardHolder.classList.remove('negZ')
+  image.classList.remove('z2')
 
-  console.log(selected)
-  // selected.classList.add('negZ')
-  selected.classList.add('negZ')
-  
-  // selected.classList.remove('hide')
+}
 }
 
 // function loadImagesToCards() {

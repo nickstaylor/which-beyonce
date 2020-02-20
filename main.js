@@ -1,3 +1,5 @@
+var cardOne = new Card('assets/images')
+
 var deck = new Deck();
 
 var cardOne = new Card('a', 'assets/images/Caddyshack.jpg');

@@ -23,9 +23,14 @@ checkSelectedCards(){
 moveToMatched(){
 // move matched cards to matchedCards array
 }
- // addCardsToDeck() {
- //    for (var i = 0; i < 5; i++) {
- //      this.cards.push(card);
- //    }
- //  }
+
+// may not need the createDeck
+//  createDeck() {
+//    for (var i = 0; i < 10; i++) {
+//      var card = new Card();
+//      //code for adding [i] to name of each card
+//      this.cards.push(card);
+//    }
+//  }
+
 }

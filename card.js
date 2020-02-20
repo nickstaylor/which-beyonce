@@ -1,8 +1,7 @@
 class Card {
-  constructor(matchInfo, url) {
-    this.matchInfo = matchInfo;
+  constructor() {
+    this.matchInfo = 1;
     this.matched = false;
-    this.url = url;
   }
   match() {
 

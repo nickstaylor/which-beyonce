@@ -1,45 +1,49 @@
-function createCards() {
+var deck = new Deck();
+window.addEventListener('load', callDeck)
 
-  var cardOne = new Card('Caddyshack', assets/images/Caddyshack.jpg);
-  var cardTwo = new Card('Caddyshack', assets/images/Caddyshack.jpg);
-  var cardThree = new Card;
-  var cardFour = new Card;
-  var cardFive = new Card;
-  var cardSix = new Card;
-  var cardSeven = new Card;
-  var cardEight = new Card;
-  var cardNine = new Card;
-  var cardTen = new Card;
-
+function callDeck() {
+  deck.createDeck()
+  displayDeck()
 }
 
-var gamePage = document.querySelector('.game-page');
+var gamePage = document.querySelector('.game-page')
+// gamePage.addEventListener('click', showImage);
 
-gamePage.addEventListener('click', showImage);
-
-function showImage(event) {
-  var cardClicked = event.target;
-  if ((cardClicked.classList.contains('placeholder-1')) ||
-    (cardClicked.classList.contains('placeholder-6'))) {
-    cardClicked.innerHTML =
-    `${cardOne}`;
-      // `<img src="assets/images/Caddyshack.jpg" />`
-  } else if ((cardClicked.classList.contains('placeholder-2')) ||
-    (cardClicked.classList.contains('placeholder-7'))) {
-    cardClicked.innerHTML =
-      `<img src="assets/images/Ghostbusters.jpg" />`
-  } else if ((cardClicked.classList.contains('placeholder-3')) ||
-    (cardClicked.classList.contains('placeholder-8'))) {
-    cardClicked.innerHTML =
-      `<img src="assets/images/Kingpin.jpg" />`
-  } else if ((cardClicked.classList.contains('placeholder-4')) ||
-    (cardClicked.classList.contains('placeholder-9'))) {
-    cardClicked.innerHTML =
-      `<img src="assets/images/LifeAquatic.jpg" />`
-  }
-  else if((cardClicked.classList.contains('placeholder-5')) ||
-    (cardClicked.classList.contains('placeholder-10'))) {
-      cardClicked.innerHTML =
-      `<img src="assets/images/Rushmore.jpeg" />`
-    }
+function displayDeck() {
+  var cardNum = 0;
+  for (var i = 1; i < 11; i++) {
+    // insert adjacent html for each di
+    gamePage.insertAdjacentHTML('beforeend', `'<div class="box placeholder-${[i]}">B${[i]}</div>'`)
+    // add place holder class by interpolating the increment placeholder-${[i]}
 }
+}
+
+
+
+// function showImage(event) {
+//   deck.shuffle();
+//   var cardClicked = event.target;
+//   if ((cardClicked.classList.contains('placeholder-1')) ||
+//     (cardClicked.classList.contains('placeholder-6'))) {
+//     cardClicked.innerHTML = `<img src="${cardOne.image}" />`
+//
+//       // `<img src="assets/images/Caddyshack.jpg" />`
+//   } else if ((cardClicked.classList.contains('placeholder-2')) ||
+//     (cardClicked.classList.contains('placeholder-7'))) {
+//     cardClicked.innerHTML =
+//       `${cardOne}`
+//   } else if ((cardClicked.classList.contains('placeholder-3')) ||
+//     (cardClicked.classList.contains('placeholder-8'))) {
+//     cardClicked.innerHTML =
+//       `<img src="assets/images/Kingpin.jpg" />`
+//   } else if ((cardClicked.classList.contains('placeholder-4')) ||
+//     (cardClicked.classList.contains('placeholder-9'))) {
+//     cardClicked.innerHTML =
+//       `<img src="assets/images/LifeAquatic.jpg" />`
+//   }
+//   else if((cardClicked.classList.contains('placeholder-5')) ||
+//     (cardClicked.classList.contains('placeholder-10'))) {
+//       cardClicked.innerHTML =
+//       `<img src="assets/images/Rushmore.jpeg" />`
+//     }
+// }

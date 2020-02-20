@@ -1,8 +1,8 @@
 class Card {
-  constructor() {
-    // need to match other same pic, 1,2,3,4,5 or A,B,C,D,E
-    this.matchInfo;
+  constructor(matchInfo, url) {
+    this.matchInfo = matchInfo;
     this.matched = false;
+    this.url = url;
   }
   match() {
 

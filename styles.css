@@ -81,6 +81,11 @@ h3 {
   font-size: 50px;
 }
 
+.game-page img {
+  height: 175px;
+  width: 125px;
+}
+
 /* individual placeholders positioning */
 .placeholder-1 {
   position: relative;

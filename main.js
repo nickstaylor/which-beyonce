@@ -1,4 +1,4 @@
-var cardOne = new Card('assets/images')
+// var cardOne = new Card('assets/images')
 
 var deck = new Deck();
 
@@ -21,7 +21,7 @@ window.addEventListener('load', callDeck)
 function callDeck() {
   addCardsToDeck();
   displayCards()
-  loadImagesToCards()
+  // loadImagesToCards()
   // deck.createDeck()
   // displayCards()
 }
@@ -40,45 +40,60 @@ gamePage.addEventListener('click', selectCard);
 // }
 // }
 
-function loadImagesToCards() {
-  console.log(select)
-  var select = event.target;
-  for (var i = 0; i < 10; i++) {
-    gamePage.insertAdjacentHTML('beforeend',
-    `'<div class="box card-image image-placeholder-${[i]}">
-      <img class="card-image" src=${deck.cards[i].image} />
-    </div>
-    '`
-    )
-  }
-}
+// function loadImagesToCards() {
+//   console.log(select)
+//   var select = event.target;
+//   for (var i = 0; i < 10; i++) {
+//     gamePage.insertAdjacentHTML('beforeend',
+//     `'<div class="box card-image image-placeholder-${[i]}">
+//       <img class="card-image" src=${deck.cards[i].image} />
+//     </div>
+//     '`
+//     )
+//   }
+// }
 
 
 function displayCards() {
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `'<div class="box z2 card-holder card-placeholder-${[i]}">
+    `'<div class="box card-holder card-placeholder-${[i]}">
+    <img class="card-image hide" src=${deck.cards[i].image} />
     </div>
     '`
     )
   }
 }
 
-function selectCard(event) {
-  var selected = event.target
-  var cardHolder = document.querySelector('.card-holder')
-  var image = document.querySelector('.card-image')
-  if (selected.classList.contains('card-holder')) {
-    cardHolder.classList.add('negZ')
-    image.classList.add('z2')
-  console.log('CARD')
-} else if (selected.classList.contains('card-image')) {
-  console.log('IMAGE')
-  cardHolder.classList.remove('negZ')
-  image.classList.remove('z2')
 
+function selectCard(event) {
+  console.log(event.target.firstElementChild)
+  var selected = event.target.firstElementChild
+  selected.classList.remove('hide')
 }
+
+function unSelectCard(event) {
+  event.target.classList.add('hide')
 }
+
+
+
+// function selectCard(event) {
+//   var selected = event.target
+//   var cardHolder = document.querySelector('.card-holder')
+//   var image = document.querySelector('.card-image')
+//   for (var i = 0; i < )
+//   if (selected.classList.contains('card-holder')) {
+//     cardHolder.classList.add('negZ')
+//     image.classList.add('z2')
+//   console.log('CARD')
+// } else if (selected.classList.contains('card-image')) {
+//   console.log('IMAGE')
+//   cardHolder.classList.remove('negZ')
+//   image.classList.remove('z2')
+//
+// }
+// }
 
 // function loadImagesToCards() {
 //   console.log(select)

@@ -17,6 +17,7 @@ function addCardsToDeck() {
      deck.cards.push(cardFive);
    }
  }
+
 window.addEventListener('load', callDeck)
 function callDeck() {
   addCardsToDeck();
@@ -28,6 +29,7 @@ function callDeck() {
 
 var gamePage = document.querySelector('.game-page')
 gamePage.addEventListener('click', selectCard);
+
 
 
 // function loadImagesToCards() {
@@ -57,24 +59,40 @@ gamePage.addEventListener('click', selectCard);
 function displayCards() {
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `'<div class="box card-holder card-placeholder-${[i]}">
-    <img class="card-image hide" src=${deck.cards[i].image} />
+    `'<div class="box card-holder card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchInfo}">
+    <img class="card-image hide" data-image="image"  src=${deck.cards[i].image} />
     </div>
     '`
     )
   }
 }
 
-
 function selectCard(event) {
-  console.log(event.target.firstElementChild)
-  var selected = event.target.firstElementChild
-  selected.classList.remove('hide')
+  var selected = event.target.dataset.matchinfo
+  
+
+
 }
 
-function unSelectCard(event) {
-  event.target.classList.add('hide')
-}
+
+// var cardImages = document.querySelectorAll('card-image')
+// function seperateImages(images) {
+//   for
+// }
+// console.log(cardHolder)
+// function selectCard(event) {
+//   var card = event.target
+//   console.log(card)
+    // event.target.classList.remove('hide')
+
+
+  // console.log(cardImage)
+  // console.log(event.target.firstElementChild)
+
+//   event.target.firstElementChild.classList.remove('hide')
+// }
+
+
 
 
 

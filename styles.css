@@ -30,6 +30,14 @@ aside {
   text-align: center;
 }
 
+div * {
+  pointer-events: none;
+}
+
+div.box {
+  cursor: pointer;
+}
+
 .game-page{
   position: relative;
 }

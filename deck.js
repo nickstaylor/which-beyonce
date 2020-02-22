@@ -16,25 +16,31 @@ shuffle(){
 }
 
 checkSelectedCards(){
-  var cardOne = this.selectedCards[0];
-  var cardTwo = this.selectedCards[1];
-  if ((this.selectedCards.length === 2) && (cardOne.dataset.matchinfo === cardTwo.dataset.matchinfo)) {
-    this.matchedCards.push(cardOne)
-    this.matchedCards.push(cardTwo)
-    this.selectedCards = [];
-    cardOne.remove()
-    cardTwo.remove()
-  } else if ((this.selectedCards.length === 2) && (cardOne.dataset.matchinfo !== cardTwo.dataset.matchinfo)) {
+  var selectedOne = this.selectedCards[0];
+  var selectedTwo = this.selectedCards[1];
+  console.log(selectedOne.matchinfo)
+  console.log(selectedTwo.matchinfo)
+  if ((this.selectedCards.length == 2) && (selectedOne.matchinfo == selectedTwo.matchinfo)) {
+    this.moveToMatched()
+  } else if ((this.selectedCards.length === 2) && (selectedOne.matchinfo !== selectedTwo.matchinfo)) {
     this.selectedCards = [];
   }
   // console.log(this.selectedCards)
-  console.log(this.selectedCards.length)
-  console.log(this.matchedCards)
+  // console.log(this.selectedCards.length)
+  // console.log(this.matchedCards)
 //checking selected cards for a match.  If a match, invoking moveToMatched() function to
 //pairs to selectedCard[] array.
 }
 
-moveToMatched(){
+moveToMatched() {
+  var selectedOne = this.selectedCards[0];
+  var selectedTwo = this.selectedCards[1];
+  selectedOne.matched = true;
+  selectedTwo.matched = true;
+  this.matchedCards.push(selectedOne)
+  this.matchedCards.push(selectedTwo)
+  this.selectedCards = [];
+  removeCard()
 // move matched cards to matchedCards array
 }
 

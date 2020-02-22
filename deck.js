@@ -34,3 +34,5 @@ moveToMatched(){
 //  }
 
 }
+
+console.log('test-deck')

@@ -1,5 +1,5 @@
 // var cardOne = new Card('assets/images')
-
+console.log('test main')
 var deck = new Deck();
 
 var cardOne = new Card('a', 'assets/images/Caddyshack.jpg');
@@ -30,6 +30,42 @@ function callDeck() {
 var gamePage = document.querySelector('.game-page')
 gamePage.addEventListener('click', selectCard);
 
+function selectCard(event) {
+  var closest = event.target.closest('.flip-container')
+  closest.classList.toggle('flip')
+}
+
+function displayCards() {
+  for (var i = 0; i < 10; i++) {
+    gamePage.insertAdjacentHTML('beforeend',
+    `<div id="myCard" class="box flip-container card-placeholder-${[i]}">
+        <div class="flipper">
+          <div class="front box">
+          <p>B</p>
+          </div>
+          <div class="back">
+            <img class="card-image" src="${deck.cards[i].image}" data-imageinfo="${deck.cards[i].image}"/>
+          </div>
+        </div>
+    </div>
+    `)
+  }
+}
+// function displayCards() {
+//   for (var i = 0; i < 10; i++) {
+//     gamePage.insertAdjacentHTML('beforeend',
+//     `'<div class="box card-holder card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchInfo}">
+//     <img class="card-image hide" data-image="${deck.cards[i].image}"  src=${deck.cards[i].image} />
+//     </div>
+//     '`
+//     )
+//   }
+// }
+
+
+
+
+
 
 
 // function loadImagesToCards() {
@@ -54,44 +90,6 @@ gamePage.addEventListener('click', selectCard);
 //     )
 //   }
 // }
-
-function displayCards() {
-  for (var i = 0; i < 10; i++) {
-    gamePage.insertAdjacentHTML('beforeend',
-    `<div class="box flip-container card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchInfo}"">
-        <div class = "flipper">
-          <div class="front box card-placeholder-${[i]}>"
-          <p>Front</p>
-          </div>
-          <div class="back">
-            <img class="card-image hide" data-image="${deck.cards[i].image}"  src="${deck.cards[i].image}" />
-          </div>
-        </div>
-    </div>
-    `)
-  }
-}
-// function displayCards() {
-//   for (var i = 0; i < 10; i++) {
-//     gamePage.insertAdjacentHTML('beforeend',
-//     `'<div class="box card-holder card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchInfo}">
-//     <img class="card-image hide" data-image="${deck.cards[i].image}"  src=${deck.cards[i].image} />
-//     </div>
-//     '`
-//     )
-//   }
-// }
-
-function selectCard(event) {
-  var selected = event.target.dataset.matchinfo
-  console.log(selected);
-  var imageSelected = event.target.dataset.image
-  console.log(imageSelected)
-
-
-}
-
-
 // var cardImages = document.querySelectorAll('card-image')
 // function seperateImages(images) {
 //   for

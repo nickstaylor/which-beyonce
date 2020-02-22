@@ -16,6 +16,19 @@ shuffle(){
 }
 
 checkSelectedCards(){
+  var cardOne = this.selectedCards[0];
+  var cardTwo = this.selectedCards[1];
+  if ((this.selectedCards.length === 2) && (cardOne.dataset.matchinfo === cardTwo.dataset.matchinfo)) {
+    this.matchedCards.push(cardOne)
+    this.matchedCards.push(cardTwo)
+    this.selectedCards = [];
+    
+  } else if ((this.selectedCards.length === 2) && (cardOne.dataset.matchinfo !== cardTwo.dataset.matchinfo)) {
+    this.selectedCards = [];
+  }
+  // console.log(this.selectedCards)
+  console.log(this.selectedCards.length)
+  console.log(this.matchedCards.length)
 //checking selected cards for a match.  If a match, invoking moveToMatched() function to
 //pairs to selectedCard[] array.
 }

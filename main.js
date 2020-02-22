@@ -2,20 +2,28 @@
 console.log('test main')
 var deck = new Deck();
 
-var cardOne = new Card('a', 'assets/images/Caddyshack.jpg');
-var cardTwo = new Card('b', 'assets/images/Ghostbusters.jpg');
-var cardThree = new Card('c', 'assets/images/Kingpin.jpg');
-var cardFour = new Card('d', 'assets/images/LifeAquatic.jpg');
-var cardFive = new Card('e', 'assets/images/Rushmore.jpeg');
+var cardZero = new Card('a', 'assets/images/Caddyshack.jpg', 0);
+var cardOne = new Card('b', 'assets/images/Ghostbusters.jpg', 1);
+var cardTwo = new Card('c', 'assets/images/Kingpin.jpg', 2);
+var cardThree = new Card('d', 'assets/images/LifeAquatic.jpg', 3);
+var cardFour = new Card('e', 'assets/images/Rushmore.jpeg', 4);
+var cardFive = new Card('a', 'assets/images/Caddyshack.jpg', 5);
+var cardSix = new Card('b', 'assets/images/Ghostbusters.jpg', 6);
+var cardSeven = new Card('c', 'assets/images/Kingpin.jpg', 7);
+var cardEight = new Card('d', 'assets/images/LifeAquatic.jpg', 8);
+var cardNine = new Card('e', 'assets/images/Rushmore.jpeg', 9);
 
 function addCardsToDeck() {
-  for (var i = 0; i < 2; i++) {
+     deck.cards.push(cardZero);
      deck.cards.push(cardOne);
      deck.cards.push(cardTwo);
      deck.cards.push(cardThree);
      deck.cards.push(cardFour);
      deck.cards.push(cardFive);
-   }
+     deck.cards.push(cardSix);
+     deck.cards.push(cardSeven);
+     deck.cards.push(cardEight);
+     deck.cards.push(cardNine);
  }
 
 window.addEventListener('load', callDeck)
@@ -35,18 +43,24 @@ gamePage.addEventListener('click', selectCard);
 
 
 function selectCard(event) {
+  // debugger
   var currentCard = event.target.closest('.flip-container')
   currentCard.classList.toggle('flip')
-  console.log(currentCard)
+  if ((currentCard.classList.contains('flip')) && (deck.selectedCards.length < 2)) {
+    for (var i = 0; i < deck.cards.length; i++) {
+      if (event.target.dataset.id == deck.cards[i].id) {
+        deck.cards[i].selected = true;
+        // console.log(deck.cards[i])
+        deck.selectedCards.push(deck.cards[i])
+      }
+    }
+  console.log(deck.selectedCards)
   // var currentCardClassList = currentCard.classList
   // console.log(currentCardClassList)
   // have less than/equal to 2...may need to increase if need 3 temporarily before a pop/unshift, etc}
-  if ((currentCard.classList.contains('flip')) && (deck.selectedCards.length < 2)) {
-  deck.selectedCards.push(currentCard);
-  // console.log(deck.selectedCards)
+    // console.log(currentCard.dataset.matchinfo)
+    // deck.checkSelectedCards();
   }
-    console.log(currentCard.dataset.matchinfo)
-    deck.checkSelectedCards();
 }
 
 // function selectCard(event) {
@@ -68,7 +82,7 @@ function selectCard(event) {
 function displayCards() {
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `<div class="box flip-container card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchinfo}">
+    `<div class="box flip-container card-placeholder-${[i]}" data-id="${[i]}" data-matchinfo="${deck.cards[i].matchinfo}">
         <div class="flipper">
           <div class="front box">
           <p>B</p>

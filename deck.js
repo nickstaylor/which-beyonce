@@ -22,14 +22,14 @@ checkSelectedCards(){
     this.matchedCards.push(cardOne)
     this.matchedCards.push(cardTwo)
     this.selectedCards = [];
-    cardOne.classList.add('hide')
-    cardTwo.classList.add('hide')
+    cardOne.remove()
+    cardTwo.remove()
   } else if ((this.selectedCards.length === 2) && (cardOne.dataset.matchinfo !== cardTwo.dataset.matchinfo)) {
     this.selectedCards = [];
   }
   // console.log(this.selectedCards)
   console.log(this.selectedCards.length)
-  console.log(this.matchedCards.length)
+  console.log(this.matchedCards)
 //checking selected cards for a match.  If a match, invoking moveToMatched() function to
 //pairs to selectedCard[] array.
 }

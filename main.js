@@ -37,15 +37,17 @@ function selectCard(event) {
   // have less than/equal to 2...may need to increase if need 3 temporarily before a pop/unshift, etc
   if ((currentCard.classList.contains('flip')) && (deck.selectedCards.length < 2)) {
   deck.selectedCards.push(currentCard);
-  console.log(deck.selectedCards)
+  // console.log(deck.selectedCards)
   }
+    console.log(currentCard.dataset.matchinfo)
+  deck.checkSelectedCards();
 }
 
 
 function displayCards() {
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `<div class="box flip-container card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchInfo}">
+    `<div class="box flip-container card-placeholder-${[i]}" data-matchinfo="${deck.cards[i].matchinfo}">
         <div class="flipper">
           <div class="front box">
           <p>B</p>

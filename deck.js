@@ -22,7 +22,8 @@ checkSelectedCards(){
     this.matchedCards.push(cardOne)
     this.matchedCards.push(cardTwo)
     this.selectedCards = [];
-    
+    cardOne.classList.add('hide')
+    cardTwo.classList.add('hide')
   } else if ((this.selectedCards.length === 2) && (cardOne.dataset.matchinfo !== cardTwo.dataset.matchinfo)) {
     this.selectedCards = [];
   }

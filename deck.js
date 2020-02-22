@@ -3,6 +3,8 @@ class Deck {
     this.cards = []
     this.matchedCards = [];
     this.selectedCards = [];
+    this.selectedDivs = []
+    this.matchedDivs = [];
   }
 shuffle(){
   // not really shuffling yet
@@ -18,13 +20,14 @@ shuffle(){
 checkSelectedCards(){
   var selectedOne = this.selectedCards[0];
   var selectedTwo = this.selectedCards[1];
-  console.log(selectedOne.matchinfo)
-  console.log(selectedTwo.matchinfo)
+  // console.log(selectedOne.matchinfo)
+  // console.log(selectedTwo.matchinfo)
   if ((this.selectedCards.length == 2) && (selectedOne.matchinfo == selectedTwo.matchinfo)) {
     this.moveToMatched()
   } else if ((this.selectedCards.length === 2) && (selectedOne.matchinfo !== selectedTwo.matchinfo)) {
     this.selectedCards = [];
   }
+  this.checkDivs()
   // console.log(this.selectedCards)
   // console.log(this.selectedCards.length)
   // console.log(this.matchedCards)
@@ -32,6 +35,19 @@ checkSelectedCards(){
 //pairs to selectedCard[] array.
 }
 
+checkDivs() {
+  var cardOne = this.selectedDivs[0];
+  var cardTwo = this.selectedDivs[1];
+  if ((this.selectedDivs.length === 2) && (cardOne.dataset.matchinfo === cardTwo.dataset.matchinfo)) {
+    // this.matchedCards.push(cardOne)
+    // this.matchedCards.push(cardTwo)
+    cardOne.classList.add('hide')
+    cardTwo.classList.add('hide')
+    this.selectedDivs = [];
+  } else if ((this.selectedDivs.length === 2) && (cardOne.dataset.matchinfo !== cardTwo.dataset.matchinfo)) {
+    this.selectedDivs = [];
+  }
+}
 moveToMatched() {
   var selectedOne = this.selectedCards[0];
   var selectedTwo = this.selectedCards[1];
@@ -40,8 +56,12 @@ moveToMatched() {
   this.matchedCards.push(selectedOne)
   this.matchedCards.push(selectedTwo)
   this.selectedCards = [];
-  removeCard()
-// move matched cards to matchedCards array
+
+
+
+  // selectedOne.parentNode.removeChild(selectedOne)
+  // selectedTwo.parentNode.removeChild(selectedTwo)
+
 }
 
 // may not need the createDeck

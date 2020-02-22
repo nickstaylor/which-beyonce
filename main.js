@@ -35,13 +35,6 @@ function callDeck() {
 var gamePage = document.querySelector('.game-page')
 gamePage.addEventListener('click', selectCard);
 
-// function onlyFlipTwo(event) {
-//   if (deck.selectedCards.length <= 2) {
-//     selectCard(event)
-//   }
-// }
-
-
 function selectCard(event) {
   // debugger
   var currentCard = event.target.closest('.flip-container')
@@ -52,37 +45,22 @@ function selectCard(event) {
         deck.cards[i].selected = true;
         // console.log(deck.cards[i])
         deck.selectedCards.push(deck.cards[i])
+        deck.selectedDivs.push(currentCard)
       }
     }
-
     deck.checkSelectedCards();
   }
 }
 
-function removeCard() {
-  // debugger
-  var currentCard = event.target.closest('.flip-container')
-  currentCard.classList.add('hide')
-  // for (var i = 0; i < deck.matchedCards.length; i++) {
-  //   if (deck.matchedCards[i].matched === true) {
-  //     console.log(deck.matchedCards[i])
-  //   }
-  // }
-}
-// function selectCard(event) {
-//   var currentCard = event.target.closest('.flip-container')
-//   currentCard.classList.toggle('flip')
-//   console.log(currentCard)
-//   // var currentCardClassList = currentCard.classList
-//   // console.log(currentCardClassList)
-//   // have less than/equal to 2...may need to increase if need 3 temporarily before a pop/unshift, etc
-//   if ((currentCard.classList.contains('flip')) && (deck.selectedCards.length < 2)) {
-//   deck.selectedCards.push(currentCard);
-//   // console.log(deck.selectedCards)
+// function removeCard() {
+//   // debugger
+//   for (var i = 0; i < deck.matchedCards.length; i++) {
+//     var element = document.dataset.id[i]
+//
+//     }
 //   }
-//     console.log(currentCard.dataset.matchinfo)
-//     deck.checkSelectedCards();
-// }
+
+
 
 
 function displayCards() {

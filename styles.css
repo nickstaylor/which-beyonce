@@ -95,30 +95,29 @@ h3 {
 /* individual placeholders positioning */
 .card-placeholder-0 {
   position: absolute;
-  top: 12%;
-  left: 12%;
+  top: 3%;
+  left: 10%;
   transform: rotate(10deg);
 }
 
 .card-placeholder-1 {
   position: absolute;
-
-  top: 15%;
-  left: 30%;
+  top: 7%;
+  left: 33%;
   transform: rotate(-10deg);
 }
 
 .card-placeholder-2 {
   position: absolute;
-  top: 10%;
-  left: 50%;
+  top: 5%;
+  left: 55%;
   transform: rotate(-20deg)
 }
 
 .card-placeholder-3 {
   position: absolute;
-  top: 15%;
-  left: 70%;
+  top: 8%;
+  left: 85%;
   transform: rotate(15deg)
 }
 
@@ -131,109 +130,39 @@ h3 {
 
 .card-placeholder-5 {
   position: absolute;
-  top: 35%;
-  left: 40%;
+  top: 38%;
+  left: 50%;
   transform: rotate(-10deg);
 }
 
 .card-placeholder-6 {
   position: absolute;
-  top: 37%;
-  left: 60%;
-  transform: rotate(15deg);
+  top: 30%;
+  left: 70%;
+  transform: rotate(-15deg);
 }
 
 .card-placeholder-7 {
   position: absolute;
-  top: 60%;
-  left: 20%;
+  top: 55%;
+  left: 7%;
   transform: rotate(-25deg);
 }
 
 .card-placeholder-8 {
   position: absolute;
-  top: 60%;
-  left: 40%;
+  top: 55%;
+  left: 35%;
   transform: rotate(20deg);
 }
 
 .card-placeholder-9 {
   position: absolute;
-  top: 60%;
-  left: 60%;
+  top: 55%;
+  left: 80%;
   transform: rotate(-20deg);
 }
 
-/* .image-placeholder-0 {
-  position: absolute;
-  top: 12%;
-  left: 12%;
-  transform: rotate(10deg);
-}
-
-.image-placeholder-1 {
-  position: absolute;
-
-  top: 15%;
-  left: 30%;
-  transform: rotate(-10deg);
-}
-
-.image-placeholder-2 {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: rotate(-20deg)
-}
-
-.image-placeholder-3 {
-  position: absolute;
-  top: 15%;
-  left: 70%;
-  transform: rotate(15deg)
-}
-
-.image-placeholder-4 {
-  position: absolute;
-  top: 35%;
-  left: 20%;
-  transform: rotate(15deg)
-}
-
-.image-placeholder-5 {
-  position: absolute;
-  top: 35%;
-  left: 40%;
-  transform: rotate(-10deg);
-}
-
-.image-placeholder-6 {
-  position: absolute;
-  top: 37%;
-  left: 60%;
-  transform: rotate(15deg);
-}
-
-.image-placeholder-7 {
-  position: absolute;
-  top: 60%;
-  left: 20%;
-  transform: rotate(-25deg);
-}
-
-.image-placeholder-8 {
-  position: absolute;
-  top: 60%;
-  left: 40%;
-  transform: rotate(20deg);
-}
-
-.image-placeholder-9 {
-  position: absolute;
-  top: 60%;
-  left: 60%;
-  transform: rotate(-20deg);
-} */
 
 .num-of-matches{
   font-size: 100px;
@@ -270,7 +199,7 @@ aside p {
   color: black;
   background-color: gray;
   font-size: 50px;
-  margin: 5% 5%;
+  /* margin: 0% 0%; */
 }
 
 /* classes to add picture */
@@ -320,13 +249,7 @@ aside p {
   display: none;
 }
 
-/* entire container, keeps perspective */
-
-	/* flip the pane when hovered */
-/* .flip-container:hover .flipper, .flip-container.hover .flipper {
-  transform: rotateY(180deg);
-} */
-
+/* flip image area */
 .flip-container.flip .flipper {
 	transform: rotateY(180deg);
 }
@@ -342,7 +265,6 @@ aside p {
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -350,7 +272,7 @@ aside p {
 
 /* front pane, placed above back */
 .front {
-	z-index: 2;
+	/* z-index: 2; */
 	/* for firefox 31 */
 	transform: rotateY(0deg);
 }

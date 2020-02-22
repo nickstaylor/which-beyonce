@@ -54,15 +54,21 @@ function selectCard(event) {
         deck.selectedCards.push(deck.cards[i])
       }
     }
-  console.log(deck.selectedCards)
-  // var currentCardClassList = currentCard.classList
-  // console.log(currentCardClassList)
-  // have less than/equal to 2...may need to increase if need 3 temporarily before a pop/unshift, etc}
-    // console.log(currentCard.dataset.matchinfo)
-    // deck.checkSelectedCards();
+
+    deck.checkSelectedCards();
   }
 }
 
+function removeCard() {
+  // debugger
+  var currentCard = event.target.closest('.flip-container')
+  currentCard.classList.add('hide')
+  // for (var i = 0; i < deck.matchedCards.length; i++) {
+  //   if (deck.matchedCards[i].matched === true) {
+  //     console.log(deck.matchedCards[i])
+  //   }
+  // }
+}
 // function selectCard(event) {
 //   var currentCard = event.target.closest('.flip-container')
 //   currentCard.classList.toggle('flip')

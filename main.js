@@ -17,6 +17,7 @@ var cardsClicked = 0;
 var timer;
 var totalSeconds = 0;
 var threeTopTimes = [];
+// var matchedCardsAside = [];
 
 
 var gamePage = document.querySelector('.game-page')
@@ -26,6 +27,7 @@ window.addEventListener('load', callDeck)
 function callDeck() {
   addCardsToDeck();
   displayCards()
+
 }
 
 function addCardsToDeck() {
@@ -76,6 +78,7 @@ function selectCard(event) {
     currentCard.classList.toggle('flip')
     // console.log(cardsCurSelected)
     pushCardToSelected();
+
   }
 
 
@@ -116,6 +119,7 @@ function increaseMatches() {
   var numOfMatchesArea = document.querySelector('.num-of-matches')
   var numOfMatches = deck.matchedCards.length/2
   numOfMatchesArea.innerHTML = `${numOfMatches}`
+  displayMatchedCards();
   // console.log(numOfMatches)
   if (numOfMatches === 5) {
     switchToCongrats()
@@ -217,4 +221,29 @@ function displayTopTimes() {
   } else if (threeTopTimes.length === 1 ) {
   topThreeDisplay1.innerHTML = `${threeTopTimes[0]} SECS`
   }
+}
+
+function displayMatchedCards() {
+
+  var matchedCardOne = document.querySelector('.matched-1');
+  var matchedCardTwo = document.querySelector('.matched-2');
+  var matchedCardThree = document.querySelector('.matched-3');
+  var matchedCardFour = document.querySelector('.matched-4');
+  var matchedCardFive = document.querySelector('.matched-5');
+  console.log(deck.matchedCards);
+
+  matchedCardOne.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[0].image}"
+  data-imageinfo="${deck.matchedCards[0].image}" />`;
+
+  matchedCardTwo.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[2].image}"
+  data-imageinfo="${deck.matchedCards[2].image}" />`;
+
+  matchedCardThree.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[4].image}"
+  data-imageinfo="${deck.matchedCards[4].image}" />`
+
+  matchedCardFour.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[6].image}"
+  data-imageinfo="${deck.matchedCards[6].image}" />`;
+
+  matchedCardFive.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[8].image}"
+  data-imageinfo="${deck.matchedCards[8].image}" />`;
 }

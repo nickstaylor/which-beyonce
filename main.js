@@ -16,6 +16,8 @@ var lockCards = false;
 var cardsClicked = 0;
 var timer;
 var totalSeconds = 0;
+var threeTopTimes = [];
+
 
 var gamePage = document.querySelector('.game-page')
 gamePage.addEventListener('click', selectCard);
@@ -41,15 +43,15 @@ function addCardsToDeck() {
 
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...
 function waitThenFlip() {
-  console.log('made it to waitThenFlip function')
+  // console.log('made it to waitThenFlip function')
   lockCards = true;
   var timeoutId = window.setTimeout(flipIncorrects, 2 * 1000);
 }
 
 function flipIncorrects() {
   lockCards = false;
-  console.log(deck.selectedCards.length)
-  console.log(deck.selectedDivs.length)
+  // console.log(deck.selectedCards.length)
+  // console.log(deck.selectedDivs.length)
   // debugger
   for (var i = 0; i < deck.selectedDivs.length; i++) {
     var currentDiv = deck.selectedDivs[i]
@@ -88,7 +90,7 @@ function selectCard(event) {
         deck.selectedDivs.push(currentCard)
       }
     }
-    console.log(deck.selectedCards.length)
+    // console.log(deck.selectedCards.length)
     deck.checkSelectedCards();
   }
 }
@@ -114,7 +116,7 @@ function increaseMatches() {
   var numOfMatchesArea = document.querySelector('.num-of-matches')
   var numOfMatches = deck.matchedCards.length/2
   numOfMatchesArea.innerHTML = `${numOfMatches}`
-  console.log(numOfMatches)
+  // console.log(numOfMatches)
   if (numOfMatches === 5) {
     switchToCongrats()
   }
@@ -142,17 +144,19 @@ function startTimer() {
 function displayTime() {
   console.log(totalSeconds);
   // var displayTimeArea = document.querySelector();
-  var displaySecs = document.querySelector('.display-secs');
-  var displayMins = document.querySelector('.display-mins');
+  var timePlayed = document.querySelector('.time-played');
+  // var displayMins = document.querySelector('.display-mins');
   if (totalSeconds < 60) {
-    displaySecs.innerHTML = `${totalSeconds} SECS`
+    timePlayed.innerHTML = `${totalSeconds} SECS`
   }
   else {
     var minutes = parseInt((totalSeconds / 60), 10)
     var seconds = (totalSeconds % 60)
-    displayMins.innerHTML = `${minutes} MIN`;
-    displaySecs.innerHTML = `${seconds} SEC`;
+    timePlayed.innerHTML = `${minutes} MIN ${seconds} SEC`
+    // displaySecs.innerHTML = `${seconds} SEC`;
   }
+
+  findTopTimes()
 }
 
 // play again button to restart game.
@@ -166,6 +170,7 @@ function refreshGamePage() {
   aside.classList.remove('hide')
   gamePage.classList.remove('hide')
   refreshGameData()
+  displayTopTimes()
 }
 
 function refreshGameData() {
@@ -174,6 +179,42 @@ function refreshGameData() {
   deck.selectedCards = [];
   deck.selectedDivs = []
   deck.matchedDivs = [];
+  totalSeconds = 0;
+  cardsClicked = 0;
   increaseMatches()
   callDeck();
+}
+// function to sort
+function sortNumber(a, b) {
+  return a - b
+}
+
+function findTopTimes() {
+  var totalSecondsThisRound = totalSeconds
+  threeTopTimes.push(totalSecondsThisRound)
+  if (threeTopTimes.length <= 3) {
+    threeTopTimes.sort(sortNumber)
+  } else if (threeTopTimes.length > 3) {
+    threeTopTimes.sort(sortNumber)
+    threeTopTimes.pop()
+  }
+  console.log(threeTopTimes)
+}
+
+
+// will display top 3 times but only in seconds...minutes on backburner..
+function displayTopTimes() {
+  var topThreeDisplay1 = document.querySelector('.num-one-time');
+  var topThreeDisplay2 = document.querySelector('.num-two-time');
+  var topThreeDisplay3 = document.querySelector('.num-three-time');
+  if (threeTopTimes.length === 3) {
+  topThreeDisplay1.innerHTML = `${threeTopTimes[0]} SECS`
+  topThreeDisplay2.innerHTML = `${threeTopTimes[1]} SECS`
+  topThreeDisplay3.innerHTML = `${threeTopTimes[2]} SECS`
+  } else if (threeTopTimes.length === 2) {
+  topThreeDisplay1.innerHTML = `${threeTopTimes[0]} SECS`
+  topThreeDisplay2.innerHTML = `${threeTopTimes[1]} SECS`
+  } else if (threeTopTimes.length === 1 ) {
+  topThreeDisplay1.innerHTML = `${threeTopTimes[0]} SECS`
+  }
 }

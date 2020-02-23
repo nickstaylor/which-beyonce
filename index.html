@@ -11,7 +11,7 @@
     <header>
       <h1>Which Bill Murray?</h1>
     </header>
-    <aside>
+    <aside class = 'aside'>
       <p class="matches">MATCHES</p>
       <p>THIS ROUND</p>
       <p class="num-of-matches">0</p>
@@ -44,10 +44,11 @@
     </main>
 
   <!-- winner page -->
-  <section hidden class="win-page">
+  <section class="win-page hide">
     <h2>Congratulations</h2>
     <h3>All 5 matches were found in</h3>
-    <p class="time-played">2 MINS  6 SECS</p>
+    <p class="time-played display-mins"></p>
+    <p class="time-played display-secs"></p>
     <button class="play-again">Play Again</button>
     <button class="new-game">New Game</button>
   </section>

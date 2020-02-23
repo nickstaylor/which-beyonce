@@ -187,8 +187,10 @@ aside p {
 }
 
 .matched-cards {
-
+  height: 90px;
+  width: 70px;
 }
+
 
 .top-times{
   text-align: center;

@@ -1,0 +1,74 @@
+DTR: Which Beyonce?
+Nick, Alex and Dave
+
+
+DTR: Define the Relationship
+One teammate should copy and paste the raw markdown into a gist of your own.
+
+Guiding Questions to Define The Relationship:
+What is your collaboration style? How do you feel about pair programming vs. divide-and-conquer approaches?
+How do you communicate best? How do you appreciate receiving communication from others?
+How would you describe your work style?
+What are each of our strengths? How can our strengths complement each other?
+What’s gone well or poorly in your previous projects?
+How will we set direction and make decisions as a team?
+What do you need (resources, environment, communication) to do your best work?
+What scheduling restraints do you have? What are your scheduling preferences?
+What is your style for giving feedback? Does anything ever hold you back from giving feedback?
+What do you identify as being your biggest strength(s) technically? Where do you feel you could use improvement in your technical skills? How can our team help support you in improving these skills?
+How do you want the group to solve problems when members run into issues with features of the project?
+How do you know if a project is successful? How can we achieve that as a group?
+How will we recognize each other's successes and celebrate them?
+Any additional questions that you would like to add:
+
+Template for DTR Memo
+Project: 2001 Group Project
+
+Group Member Names: Nick, Alex, Dave
+
+Goals and Expectations for the Project (What does each group member hope to get out of this project? What do we want to achieve as a team? How will we know that we're successful? YES, you can still fully answer this question without knowing exactly what you're going to build.):
+
+  Nick: work well together, don't work in silos, be on the same page.
+  Alex: feeling more comfortable with JavaScript. Search more efficiently, know what to look for, not taking shots in the dark, write more efficient code.
+  Dave: working well as team, staying in communication the whole time. Be more efficient with planning and commits. Focus on a single feature at time.
+
+  As a team: Be better with Git Hub, staying up to date with master and stay consistent with pushing and pulling. Average 3's in our feedback. Learn and be able go replicate various code/features.
+
+
+Team strengths & collaboration styles (consider discussing your Pairin qualities here):
+
+  Nick: being around people, pair programming, aware that certain things will have to be done separately. Show each other how we figure out problems and how our code works.
+  Alex: starting off pair programming to avoid conflicts, getting on the same page every morning. Push and pull daily
+  Dave: start off pair programming, when need to divide and conquer we share how we did things with each other. Have each other explain the others code back to them.
+
+  As a team: get initial layout together, communicate well, leave commentary within code
+
+
+How we can use our strengths to overcome obstacles:
+  Communicating with each other, rubber duck with each other, don't wait too long before asking for help, we are all committed to putting in the work necessary.
+
+
+What do you need to look out for, in terms of strengths/working styles coming into conflict?
+  Recognizing when someone is getting frustrated. Taking breaks away from coding. Finding balance between pairing and divide/conquer.
+
+
+Schedule Expectations (When are we available to work together and individually? What constraints do we have?):
+  We are open but only small amount of time in morning before class. We can all stay after class within reason and if someone needs to leave earlier that is not an issue. We are all committed to coming in on Saturday for sure...possibly Sunday if needed otherwise a Slack check in on Sunday. Daily communication!
+
+What is the one hour/day that each teammate has on their calendar for personal study/practice time?
+  Mornings, but we will have a check-in around 8:45a each day before class.
+
+
+Communication Expectations (How and often will we communicate? How do we keep lines of communication open? How will we make decisions as a team?):
+  Daily at a minimum. Scheduled check-in, DTR revisit for this Saturday. Stay open while working together but on different aspects.
+
+
+Abilities & Growth Expectations (Technical strengths and areas for desired improvement):
+  Move beyond basics of JavaScript. Get better at pseudo-coding. Get better at project planning and implementation, slow down during planning. Use time more efficiently. Using dev tools to understand our JavaScript errors.
+
+
+Expectations for giving and receiving feedback:
+  Have a shorter timeframe for giving feedback...give/receive feedback throughout the project. Be direct with feedback...we are all here to get better.
+
+
+Additional Notes:

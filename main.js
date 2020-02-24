@@ -15,9 +15,11 @@ var cardNine = new Card('e', 'assets/images/Rushmore.jpeg', 9);
 var lockCards = false;
 var cardsClicked = 0;
 var timer;
+// var timerForFlip;
 var totalSeconds = 0;
 var threeTopTimes = [];
 // var matchedCardsAside = [];
+
 
 
 var gamePage = document.querySelector('.game-page')
@@ -25,9 +27,11 @@ gamePage.addEventListener('click', selectCard);
 
 window.addEventListener('load', callDeck)
 function callDeck() {
+  // debugger
   addCardsToDeck();
-  displayCards()
-
+  // displayCards();
+  // loadLocalStorage();
+  displayTopTimes();
 }
 
 function addCardsToDeck() {
@@ -41,6 +45,8 @@ function addCardsToDeck() {
      deck.cards.push(cardSeven);
      deck.cards.push(cardEight);
      deck.cards.push(cardNine);
+     deck.shuffle()
+     displayCards();
  }
 
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...
@@ -84,13 +90,17 @@ function selectCard(event) {
 
   function pushCardToSelected() {
     var currentCard = event.target.closest('.flip-container')
-  if ((currentCard.classList.contains('flip')) &&        (deck.selectedCards.length < 2)) {
+  if ((currentCard.classList.contains('flip')) && (deck.selectedCards.length < 2)) {
     for (var i = 0; i < deck.cards.length; i++) {
       if (event.target.dataset.id == deck.cards[i].id) {
         deck.cards[i].selected = true;
         // console.log(deck.cards[i])
         deck.selectedCards.push(deck.cards[i])
         deck.selectedDivs.push(currentCard)
+      }
+      if ((deck.selectedCards.length === 2) && (deck.selectedCards[0].id == deck.selectedCards[1].id)) {
+        deck.selectedCards.pop();
+        deck.selectedDivs.pop();
       }
     }
     // console.log(deck.selectedCards.length)
@@ -101,7 +111,7 @@ function selectCard(event) {
 function displayCards() {
   for (var i = 0; i < 10; i++) {
     gamePage.insertAdjacentHTML('beforeend',
-    `<div class="box flip-container card-placeholder-${[i]}" data-id="${[i]}" data-matchinfo="${deck.cards[i].matchinfo}">
+    `<div class="box flip-container card-placeholder-${[i]}" data-id="${deck.cards[i].id}" data-matchinfo="${deck.cards[i].matchinfo}">
         <div class="flipper">
           <div class="front box">
           <p>B</p>
@@ -119,6 +129,7 @@ function increaseMatches() {
   var numOfMatchesArea = document.querySelector('.num-of-matches')
   var numOfMatches = deck.matchedCards.length/2
   numOfMatchesArea.innerHTML = `${numOfMatches}`
+
   displayMatchedCards();
   // console.log(numOfMatches)
   if (numOfMatches === 5) {
@@ -174,6 +185,8 @@ function refreshGamePage() {
   gamePage.classList.remove('hide')
   refreshGameData()
   displayTopTimes()
+  // setLocalStorage()
+
 }
 
 function refreshGameData() {
@@ -207,7 +220,8 @@ function findTopTimes() {
     threeTopTimes.sort(sortNumber)
     threeTopTimes.pop()
   }
-  console.log(threeTopTimes)
+
+  // console.log(threeTopTimes)
 }
 
 
@@ -263,3 +277,24 @@ function clearDisplayMatchedCards() {
   callDeck();
 
 }
+
+
+// mess around with local storage
+// function setLocalStorage() {
+//   var stringifiedThreeTopTimes = JSON.stringify(threeTopTimes)
+//   localStorage.setItem('top3', stringifiedThreeTopTimes)
+  // for (var i = 0; i < threeTopTimes.length; i++) {
+  //   localStorage.setItem(`'top${[i]}'`, threeTopTimes[i])
+  // }
+  // console.log('local set!')
+
+
+// function loadLocalStorage() {
+//   var retrievedThreeTopTimes = localStorage.getItem('top3')
+//   var parsedThreeTopTimes = JSON.parse(retrievedThreeTopTimes)
+
+//   for (var i = 0; i < 4; i++) {
+//   threeTopTimes.push(localStorage.getItem(`'top${[i]}'`))
+//   }
+//   // console.log('local storage got!')
+// }

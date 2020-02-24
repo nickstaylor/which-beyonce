@@ -7,9 +7,18 @@ class Deck {
     this.matchedDivs = [];
   }
 shuffle(){
-  // not really shuffling yet
-//this method takes all cards, randomizes them, and then pushes each cards
-//into the array of cards-maybe
+  var j, x, i;
+  for (i = this.cards.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      // generates random number between 0-9
+      x = this.cards[i];
+      //initial value of array index
+      this.cards[i] = this.cards[j];
+      //moves array index i to new position of array index j
+      this.cards[j] = x;
+      // moves j index back to original i index
+  }
+  return this.cards;
 }
 
 checkSelectedCards(){
@@ -54,7 +63,9 @@ moveToMatched() {
   this.matchedCards.push(selectedTwo)
   this.selectedCards = [];
   // cardsCurSelected = 0;
+  
   this.checkDivs()
+
   increaseMatches()
   }
 

@@ -159,7 +159,6 @@ function displayTime() {
     timePlayed.innerHTML = `${minutes} MIN ${seconds} SEC`
     // displaySecs.innerHTML = `${seconds} SEC`;
   }
-
   findTopTimes()
 }
 
@@ -185,8 +184,14 @@ function refreshGameData() {
   deck.matchedDivs = [];
   totalSeconds = 0;
   cardsClicked = 0;
-  increaseMatches()
-  callDeck();
+  refreshPageData();
+}
+
+function refreshPageData() {
+  var numOfMatchesArea = document.querySelector('.num-of-matches')
+  numOfMatchesArea.innerHTML = 0
+  clearDisplayMatchedCards();
+  // callDeck();
 }
 // function to sort
 function sortNumber(a, b) {
@@ -231,19 +236,30 @@ function displayMatchedCards() {
   var matchedCardFour = document.querySelector('.matched-4');
   var matchedCardFive = document.querySelector('.matched-5');
   console.log(deck.matchedCards);
-
   matchedCardOne.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[0].image}"
   data-imageinfo="${deck.matchedCards[0].image}" />`;
-
   matchedCardTwo.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[2].image}"
   data-imageinfo="${deck.matchedCards[2].image}" />`;
-
   matchedCardThree.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[4].image}"
   data-imageinfo="${deck.matchedCards[4].image}" />`
-
   matchedCardFour.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[6].image}"
   data-imageinfo="${deck.matchedCards[6].image}" />`;
-
   matchedCardFive.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[8].image}"
   data-imageinfo="${deck.matchedCards[8].image}" />`;
+  deck.checkDivs()
+}
+
+function clearDisplayMatchedCards() {
+  var matchedCardOne = document.querySelector('.matched-1');
+  var matchedCardTwo = document.querySelector('.matched-2');
+  var matchedCardThree = document.querySelector('.matched-3');
+  var matchedCardFour = document.querySelector('.matched-4');
+  var matchedCardFive = document.querySelector('.matched-5');
+  matchedCardOne.innerHTML = ` `;
+  matchedCardTwo.innerHTML = ` `;
+  matchedCardThree.innerHTML = ` `;
+  matchedCardFour.innerHTML = ` `;
+  matchedCardFive.innerHTML = ` `;
+  callDeck();
+
 }

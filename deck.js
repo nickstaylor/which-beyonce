@@ -26,7 +26,7 @@ checkSelectedCards(){
     // cardsCurSelected = 0;
 
   }
-  this.checkDivs()
+
   // console.log(this.selectedCards)
   // console.log(this.selectedCards.length)
   // console.log(this.matchedCards)
@@ -54,6 +54,7 @@ moveToMatched() {
   this.matchedCards.push(selectedTwo)
   this.selectedCards = [];
   // cardsCurSelected = 0;
+  this.checkDivs()
   increaseMatches()
   }
 

@@ -74,16 +74,12 @@ function pushCardToSelected() {
         deck.cards[i].selected = true;
         deck.selectedCards.push(deck.cards[i])
         pushDivToSelected()
-        // deck.selectedDivs.push(currentCard)
       }
       if ((deck.selectedCards.length === 2) && (deck.selectedCards[0].id == deck.selectedCards[1].id)) {
         deck.selectedCards.pop();
         removeDivFromSelected()
-        // deck.selectedDivs.pop();
-
       }
     }
-    // pushDivToSelected();
     deck.checkSelectedCards();
   }
 }
@@ -96,7 +92,6 @@ function pushDivToSelected() {
 function removeDivFromSelected() {
   var currentCard = event.target.closest('.flip-container')
   deck.selectedDivs.pop();
-
 }
 
 

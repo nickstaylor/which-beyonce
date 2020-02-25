@@ -24,9 +24,9 @@ checkSelectedCards(){
     this.moveToMatched()
   } else if ((this.selectedCards.length === 2) && (selectedOne.matchinfo !== selectedTwo.matchinfo)) {
     waitThenFlip()
-    // pushDivToSelected()
   }
 }
+
 
 checkDivs() {
   var cardOne = this.selectedDivs[0];

@@ -17,6 +17,29 @@ shuffle(){
   return this.cards;
 }
 
+ // add the cards to deck and then shuffle them, display them
+addCardsToDeck() {
+  deck.cards.push(cardZero);
+  deck.cards.push(cardOne);
+  deck.cards.push(cardTwo);
+  deck.cards.push(cardThree);
+  deck.cards.push(cardFour);
+  deck.cards.push(cardFive);
+  deck.cards.push(cardSix);
+  deck.cards.push(cardSeven);
+  deck.cards.push(cardEight);
+  deck.cards.push(cardNine);
+  deck.shuffle()
+  displayCards();
+}
+
+// delay function for matched cards
+waitOnMatchesThenFlip() {
+  var matchedTimeout = setTimeout(this.moveToMatched.bind(this), 1.5 * 1000);
+  console.log(deck.selectedDivs);
+}
+
+//check the selected cards for a match
 checkSelectedCards(){
   var selectedOne = this.selectedCards[0];
   var selectedTwo = this.selectedCards[1];
@@ -38,6 +61,7 @@ checkDivs() {
   }
 }
 
+//move matched cards into array
 moveToMatched() {
   var selectedOne = this.selectedCards[0];
   var selectedTwo = this.selectedCards[1];
@@ -46,7 +70,8 @@ moveToMatched() {
   this.matchedCards.push(selectedOne)
   this.matchedCards.push(selectedTwo)
   this.selectedCards = [];
-  this.checkDivs()
+  this.checkDivs();
+
   increaseMatches()
   }
 
@@ -65,5 +90,3 @@ moveToMatched() {
     displayCards();
   }
 }
-
-console.log('test-deck')

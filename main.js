@@ -25,9 +25,9 @@ gamePage.addEventListener('click', selectCard);
 window.addEventListener('load', callDeck)
 
 function callDeck() {
-  // clearStorage()
-  deck.addCardsToDeck();
-  getTopTimes()
+ // clearStorage()
+deck.addCardsToDeck();
+getTopTimes()
 }
 
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...

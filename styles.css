@@ -69,7 +69,7 @@ h3 {
 }
 
 .time-played {
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 50px;
   color: white;
 }
@@ -81,6 +81,17 @@ h3 {
   background-color: black;
   padding: 20px 40px;
   margin: 0px 40px;
+  cursor: pointer;
+}
+
+/* .play-again, */
+button:hover {
+  font-size: 24px;
+  color: black;
+  background-color: #FFF;
+  padding: 20px 40px;
+  margin: 0px 40px;
+  cursor: pointer;
 }
 
 .box {
@@ -93,8 +104,8 @@ h3 {
   background-color: #FFF;
   font-size: 50px;
   /* padding-top: 30px;  */
-
 }
+
 
 .game-page img {
   height: 175px;
@@ -214,7 +225,6 @@ aside p {
 }
 
 /* classes to add picture */
-
 .caddyshack {
   background-image: url("assets/images/Caddyshack.jpg");
   height: 175px;
@@ -245,7 +255,7 @@ aside p {
   width: 125px;
 }
 
-.negZ {
+/* .negZ {
   z-index: -1;
 }
 .z1 {
@@ -254,7 +264,7 @@ aside p {
 
 .z2 {
   z-index: 2;
-}
+} */
 
 .hide {
   display: none;

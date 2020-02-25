@@ -17,7 +17,7 @@ var cardsClicked = 0;
 var timer;
 // var timerForFlip;
 var totalSeconds = 0;
-var threeTopTimes = [];
+var threeTopTimes = []
 // var matchedCardsAside = [];
 
 
@@ -28,10 +28,13 @@ gamePage.addEventListener('click', selectCard);
 window.addEventListener('load', callDeck)
 function callDeck() {
   // debugger
+  getTopTimes()
   addCardsToDeck();
+  // clearStorage();
   // displayCards();
   // loadLocalStorage();
-  displayTopTimes();
+  // getTopTimes()
+  // displayTopTimes();
 }
 
 function addCardsToDeck() {
@@ -53,7 +56,9 @@ function addCardsToDeck() {
 function waitThenFlip() {
   // console.log('made it to waitThenFlip function')
   lockCards = true;
-  var timeoutId = window.setTimeout(flipIncorrects, 2 * 1000);
+  var timeoutId = window.setTimeout(flipIncorrects, 2 * 10);
+
+  // var timeoutId = window.setTimeout(flipIncorrects, 2 * 1000);
 }
 
 function flipIncorrects() {
@@ -123,6 +128,7 @@ function displayCards() {
     </div>
     `)
   }
+  // getTopTimes()
 }
 
 function increaseMatches() {
@@ -183,8 +189,10 @@ function refreshGamePage() {
   winPage.classList.add('hide')
   aside.classList.remove('hide')
   gamePage.classList.remove('hide')
+  storeTopTimes()
   refreshGameData()
-  displayTopTimes()
+  // displayTopTimes()
+
   // setLocalStorage()
 
 }
@@ -220,7 +228,7 @@ function findTopTimes() {
     threeTopTimes.sort(sortNumber)
     threeTopTimes.pop()
   }
-
+  displayTopTimes()
   // console.log(threeTopTimes)
 }
 
@@ -278,6 +286,134 @@ function clearDisplayMatchedCards() {
 
 }
 
+function clearStorage() {
+  localStorage.clear()
+}
+
+function storeTopTimes() {
+  var storeThreeTopTimes = threeTopTimes
+if (storeThreeTopTimes.length === 1) {
+  var topOne = JSON.stringify(storeThreeTopTimes[0])
+  localStorage.setItem('topOne', topOne)
+} else if (storeThreeTopTimes.length === 2) {
+  var topOne = JSON.stringify(storeThreeTopTimes[0])
+  localStorage.setItem('topOne', topOne)
+  var topTwo = JSON.stringify(storeThreeTopTimes[1])
+  localStorage.setItem('topTwo', topTwo)
+} else if (storeThreeTopTimes.length === 3) {
+  var topOne = JSON.stringify(storeThreeTopTimes[0])
+  localStorage.setItem('topOne', topOne)
+  var topTwo = JSON.stringify(storeThreeTopTimes[1])
+  localStorage.setItem('topTwo', topTwo)
+  var topThree = JSON.stringify(storeThreeTopTimes[2])
+  localStorage.setItem('topThree', topThree)
+}
+  // console.log('set storage')
+  // console.log(storeThreeTopTimes)
+}
+
+
+function getTopTimes() {
+    var stringTopOne = localStorage.getItem('topOne')
+    var stringTopTwo = localStorage.getItem('topTwo')
+    var stringTopThree = localStorage.getItem('topThree')
+    var topOne = JSON.parse(stringTopOne)
+    var topTwo = JSON.parse(stringTopTwo)
+    var topThree = JSON.parse(stringTopThree)
+    var getTopThreeTimes = [];
+    if (topOne === null) {
+      return
+    } else if (topTwo === null) {
+      getTopThreeTimes.push(topOne)
+
+    } else if (topThree === null) {
+      getTopThreeTimes.push(topOne)
+      getTopThreeTimes.push(topTwo)
+    } else {
+    getTopThreeTimes.push(topOne)
+    getTopThreeTimes.push(topTwo)
+    getTopThreeTimes.push(topThree)
+  }
+  threeTopTimes = getTopThreeTimes
+    // console.log('get storage end')
+    // console.log(threeTopTimes)
+    displayTopTimes()
+}
+
+
+
+// function storeTopTimes() {
+//   // findTopTimes()
+//   // if (threeTopTimes.length === 0) {
+//   //   return;
+// // } else
+//   var storeThreeTopTimes = threeTopTimes
+// if (threeTopTimes.length === 1) {
+//   var topOne = JSON.stringify(threeTopTimes[0])
+//   localStorage.setItem('topOne', topOne)
+// } else if (threeTopTimes.length === 2) {
+//   var topOne = JSON.stringify(threeTopTimes[0])
+//   localStorage.setItem('topOne', topOne)
+//   var topTwo = JSON.stringify(threeTopTimes[1])
+//   localStorage.setItem('topTwo', topTwo)
+// } else if (threeTopTimes.length === 3) {
+//   var topOne = JSON.stringify(threeTopTimes[0])
+//   localStorage.setItem('topOne', topOne)
+//   var topTwo = JSON.stringify(threeTopTimes[1])
+//   localStorage.setItem('topTwo', topTwo)
+//   var topThree = JSON.stringify(threeTopTimes[2])
+//   localStorage.setItem('topThree', topThree)
+// }
+//   console.log('set storage')
+//   console.log(threeTopTimes)
+// }
+
+// function getTopTimes() {
+//   console.log('get storage start')
+// //   if (threeTopTimes.length === 0) {
+// //   return
+// // } else
+// if (threeTopTimes.length === 1) {
+//     var stringTopOne = localStorage.getItem('topOne')
+//     var topOne = JSON.parse(stringTopOne)
+//     threeTopTimes.push(topOne)
+//     // console.log(threeTopTimes)
+//   }
+//   else if (threeTopTimes.length === 2) {
+//     var stringTopOne = localStorage.getItem('topOne')
+//     var topOne = JSON.parse(stringTopOne)
+//     var stringTopTwo = localStorage.getItem('topTwo')
+//     var topTwo = JSON.parse(stringTopTwo)
+//     threeTopTimes.push(topOne)
+//     threeTopTimes.push(topTwo)
+//     // console.log(threeTopTimes)
+//   } else if (threeTopTimes.length === 3) {
+//     var stringTopOne = localStorage.getItem('topOne')
+//     var topOne = JSON.parse(stringTopOne)
+//     var stringTopTwo = localStorage.getItem('topTwo')
+//     var topTwo = JSON.parse(stringTopTwo)
+//     var stringTopThree = localStorage.getItem('topThree')
+//     var topThree = JSON.parse(stringTopThree)
+//     threeTopTimes.push(topOne)
+//     threeTopTimes.push(topTwo)
+//     threeTopTimes.push(topThree)
+//   }
+//     // console.log(threeTopTimes)
+//   // console.log(getTopTimes running)
+//     console.log('get storage end')
+//     console.log(threeTopTimes)
+// }
+
+
+//
+// function getTopTimes() {
+//   console.log('getTopTimes function running')
+//   // var savedTopOne = JSON.parse(localStorage.getItem('topOne'))
+//   // var savedTopTwo = JSON.parse(localStorage.getItem('topTwo'))
+//   // var savedTopThree = JSON.parse(localStorage.getItem('topThree'))
+//
+//   displayTopTimes()
+// }
 
 // mess around with local storage
 // function setLocalStorage() {

@@ -38,6 +38,18 @@ div.box {
   cursor: pointer;
 }
 
+.box:hover .front {
+  cursor: pointer;
+  border: 3px solid #FFF;
+  text-align: center;
+  height: 175px;
+  width: 125px;
+  display: inline-block;
+  color: #FFF;
+  background-color: black;
+  font-size: 50px;
+}
+
 .game-page{
   position: relative;
 }

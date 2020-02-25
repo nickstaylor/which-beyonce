@@ -26,25 +26,12 @@ window.addEventListener('load', callDeck)
 
 function callDeck() {
   // clearStorage()
+  deck.addCardsToDeck();
   getTopTimes()
-  addCardsToDeck();
 }
 
- // add the cards to deck and then shuffle them, display them
-function addCardsToDeck() {
-  deck.cards.push(cardZero);
-  deck.cards.push(cardOne);
-  deck.cards.push(cardTwo);
-  deck.cards.push(cardThree);
-  deck.cards.push(cardFour);
-  deck.cards.push(cardFive);
-  deck.cards.push(cardSix);
-  deck.cards.push(cardSeven);
-  deck.cards.push(cardEight);
-  deck.cards.push(cardNine);
-  deck.shuffle()
-  displayCards();
-}
+// add the cards to deck and then shuffle them, display them
+
 
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...
 function waitThenFlip() {
@@ -86,16 +73,52 @@ function pushCardToSelected() {
       if (event.target.dataset.id == deck.cards[i].id) {
         deck.cards[i].selected = true;
         deck.selectedCards.push(deck.cards[i])
-        deck.selectedDivs.push(currentCard)
+        pushDivToSelected()
+        // deck.selectedDivs.push(currentCard)
       }
       if ((deck.selectedCards.length === 2) && (deck.selectedCards[0].id == deck.selectedCards[1].id)) {
         deck.selectedCards.pop();
-        deck.selectedDivs.pop();
+        removeDivFromSelected()
+        // deck.selectedDivs.pop();
+
       }
     }
+    // pushDivToSelected();
     deck.checkSelectedCards();
   }
 }
+
+function pushDivToSelected() {
+  var currentCard = event.target.closest('.flip-container')
+  deck.selectedDivs.push(currentCard)
+  }
+
+function removeDivFromSelected() {
+  var currentCard = event.target.closest('.flip-container')
+  deck.selectedDivs.pop();
+
+}
+
+
+
+
+// function pushCardToSelected() {
+//   var currentCard = event.target.closest('.flip-container')
+//   if ((currentCard.classList.contains('flip')) && (deck.selectedCards.length < 2)) {
+//     for (var i = 0; i < deck.cards.length; i++) {
+//       if (event.target.dataset.id == deck.cards[i].id) {
+//         deck.cards[i].selected = true;
+//         deck.selectedCards.push(deck.cards[i])
+//         deck.selectedDivs.push(currentCard)
+//       }
+//       if ((deck.selectedCards.length === 2) && (deck.selectedCards[0].id == deck.selectedCards[1].id)) {
+//         deck.selectedCards.pop();
+//         deck.selectedDivs.pop();
+//       }
+//     }
+//     deck.checkSelectedCards();
+//   }
+// }
 
 // lays cards out on the screen, face down
 function displayCards() {

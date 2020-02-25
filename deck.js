@@ -43,14 +43,13 @@ waitOnMatchesThenFlip() {
 checkSelectedCards(){
   var selectedOne = this.selectedCards[0];
   var selectedTwo = this.selectedCards[1];
-  if ((this.selectedCards.length == 2) && (selectedOne.matchinfo == selectedTwo.matchinfo)) {
-    this.moveToMatched()
+  if ((this.selectedCards.length == 2) && (selectedOne.matchinfo == selectedTwo.matchinfo)){
+    this.waitOnMatchesThenFlip();
   } else if ((this.selectedCards.length === 2) && (selectedOne.matchinfo !== selectedTwo.matchinfo)) {
     waitThenFlip()
   }
 }
-
-
+// hide cards if a match
 checkDivs() {
   var cardOne = this.selectedDivs[0];
   var cardTwo = this.selectedDivs[1];
@@ -89,4 +88,5 @@ moveToMatched() {
     deck.shuffle()
     displayCards();
   }
+
 }

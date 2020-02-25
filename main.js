@@ -26,25 +26,12 @@ window.addEventListener('load', callDeck)
 
 function callDeck() {
   // clearStorage()
+  deck.addCardsToDeck();
   getTopTimes()
-  addCardsToDeck();
 }
 
  // add the cards to deck and then shuffle them, display them
-function addCardsToDeck() {
-  deck.cards.push(cardZero);
-  deck.cards.push(cardOne);
-  deck.cards.push(cardTwo);
-  deck.cards.push(cardThree);
-  deck.cards.push(cardFour);
-  deck.cards.push(cardFive);
-  deck.cards.push(cardSix);
-  deck.cards.push(cardSeven);
-  deck.cards.push(cardEight);
-  deck.cards.push(cardNine);
-  deck.shuffle()
-  displayCards();
-}
+
 
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...
 function waitThenFlip() {

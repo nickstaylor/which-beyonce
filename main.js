@@ -30,9 +30,6 @@ deck.addCardsToDeck();
 getTopTimes()
 }
 
- 
-
-
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...
 function waitThenFlip() {
   lockCards = true;
@@ -73,15 +70,25 @@ function pushCardToSelected() {
       if (event.target.dataset.id == deck.cards[i].id) {
         deck.cards[i].selected = true;
         deck.selectedCards.push(deck.cards[i])
-        deck.selectedDivs.push(currentCard)
+        pushDivToSelected()
       }
       if ((deck.selectedCards.length === 2) && (deck.selectedCards[0].id == deck.selectedCards[1].id)) {
         deck.selectedCards.pop();
-        deck.selectedDivs.pop();
+        removeDivFromSelected()
       }
     }
     deck.checkSelectedCards();
   }
+}
+
+function pushDivToSelected() {
+  var currentCard = event.target.closest('.flip-container')
+  deck.selectedDivs.push(currentCard)
+  }
+
+function removeDivFromSelected() {
+  var currentCard = event.target.closest('.flip-container')
+  deck.selectedDivs.pop();
 }
 
 // lays cards out on the screen, face down

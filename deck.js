@@ -63,10 +63,25 @@ moveToMatched() {
   this.matchedCards.push(selectedTwo)
   this.selectedCards = [];
   // cardsCurSelected = 0;
-  
+
   this.checkDivs()
 
   increaseMatches()
+  }
+
+  addCardsToDeck() {
+    deck.cards.push(cardZero);
+    deck.cards.push(cardOne);
+    deck.cards.push(cardTwo);
+    deck.cards.push(cardThree);
+    deck.cards.push(cardFour);
+    deck.cards.push(cardFive);
+    deck.cards.push(cardSix);
+    deck.cards.push(cardSeven);
+    deck.cards.push(cardEight);
+    deck.cards.push(cardNine);
+    deck.shuffle()
+    displayCards();
   }
 
 }

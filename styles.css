@@ -33,13 +33,13 @@ aside {
 
 div * {
   pointer-events: none;
-
 }
 
 div.box {
   cursor: pointer;
 }
 
+/* hover state for cards */
 .box:hover .front {
   background-color: black;
   border: 3px solid #FFF;
@@ -52,6 +52,7 @@ div.box {
   width: 125px;
 }
 
+/* main page with cards layed out */
 .game-page{
   position: relative;
   z-index: 1;
@@ -62,6 +63,7 @@ main {
   grid-area: main;
 }
 
+/* congrats page */
 .win-page {
   background-image: url("assets/images/Bill-Murray-Space-Jam.jpeg");
   filter: grayscale(50%);
@@ -84,12 +86,13 @@ h3 {
   font-weight: normal;
 }
 
+/* time display for congrats page */
 .time-played {
   color: white;
-  /* display: inline-block; */
   font-size: 50px;
 }
 
+/* buttons on congrats page */
 .play-again,
 .new-game {
   background-color: black;
@@ -100,7 +103,7 @@ h3 {
   padding: 20px 40px;
 }
 
-/* .play-again, */
+/* congrats page button hover states */
 .win-page button:hover {
   background-color: #FFF;
   color: black;
@@ -110,7 +113,7 @@ h3 {
   padding: 20px 40px;
 }
 
-
+/* formatting for cards */
 .box {
   background-color: #FFF;
   border: 3px solid black;
@@ -121,7 +124,6 @@ h3 {
   text-align: center;
   width: 125px;
 }
-
 
 .game-page img {
   height: 175px;
@@ -141,7 +143,6 @@ h3 {
 .card-placeholder-9 {
   position: absolute;
 }
-
 
 .card-placeholder-0 {
   left: 10%;
@@ -203,7 +204,7 @@ h3 {
   transform: rotate(-20deg);
 }
 
-
+/* matches counter on side bar */
 .num-of-matches{
   font-size: 80px;
   font-weight: bold;
@@ -222,7 +223,7 @@ aside p {
   width: 70px;
 }
 
-
+/* three top times area on side bar */
 .top-times{
   margin-top: 20px;
   text-align: center;
@@ -232,6 +233,7 @@ aside p {
   padding: 10px;
 }
 
+/* formatting for matched cards on side bar */
 .matched-cards-area div {
   background-color: gray;
   border: 3px solid black;
@@ -274,6 +276,7 @@ aside p {
   background-image: url("assets/images/Rushmore.jpeg");
 }
 
+/* used for classes on page transitions */
 .hide {
   display: none;
 }
@@ -308,6 +311,7 @@ aside p {
 	transform: rotateY(180deg);
 }
 
+/* page to enterp player's names */
 .enter-names-page {
   background-color: lightgray;
   color: #FFF;
@@ -324,11 +328,13 @@ aside p {
   width: 75%;
 }
 
+/* background for black box on enter players name page */
 .black-box {
   background-color: black;
   height: 50%;
   margin: 10% 5%;
 }
+
 .enter-names-page button {
   background-color: gray;
   border-color: black;
@@ -340,6 +346,7 @@ aside p {
   width: 25%;
 }
 
+/* hover state for begin game button */
 .enter-names-page button:hover {
   background-color: #FFF;
   color: gray;

@@ -220,21 +220,26 @@ function displayTopTimes() {
 
 //moves matched card picture to side bar
 function displayMatchedCards() {
-  var matchedCardOne = document.querySelector('.matched-1');
-  var matchedCardTwo = document.querySelector('.matched-2');
-  var matchedCardThree = document.querySelector('.matched-3');
-  var matchedCardFour = document.querySelector('.matched-4');
-  var matchedCardFive = document.querySelector('.matched-5');
-  console.log(deck.matchedCards);
-  matchedCardOne.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[0].image}"
+    var matchedCard0 = document.querySelector('.matched-1');
+    var matchedCard2 = document.querySelector('.matched-2');
+    var matchedCard4 = document.querySelector('.matched-3');
+    var matchedCard6 = document.querySelector('.matched-4');
+    var matchedCard8 = document.querySelector('.matched-5');
+  // attempt to refactor, not working however.
+  // for (var i = 0; i < deck.matchedCards.length; i+= 2) {
+  //   console.log(deck.matchedCards);
+  //   matchedCard[i].innerHTML = `<img class="matched-cards" src="${deck.matchedCards[i].image}"
+  // data-imageinfo="${deck.matchedCards[i].image}" />`;
+  // }
+  matchedCard0.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[0].image}"
   data-imageinfo="${deck.matchedCards[0].image}" />`;
-  matchedCardTwo.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[2].image}"
+  matchedCard2.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[2].image}"
   data-imageinfo="${deck.matchedCards[2].image}" />`;
-  matchedCardThree.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[4].image}"
+  matchedCard4.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[4].image}"
   data-imageinfo="${deck.matchedCards[4].image}" />`
-  matchedCardFour.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[6].image}"
+  matchedCard6.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[6].image}"
   data-imageinfo="${deck.matchedCards[6].image}" />`;
-  matchedCardFive.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[8].image}"
+  matchedCard8.innerHTML = `<img class="matched-cards" src="${deck.matchedCards[8].image}"
   data-imageinfo="${deck.matchedCards[8].image}" />`;
   deck.checkDivs()
 }

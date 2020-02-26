@@ -314,3 +314,45 @@ aside p {
 .back {
 	transform: rotateY(180deg);
 }
+
+.enter-names-page {
+  background-color: lightgray;
+  color: #FFF;
+  grid-column: 1 / 6;
+  grid-row: 2 / 3;
+  text-align: center;
+  display: inline-block;
+}
+.enter-names-page input {
+  font-size: 24px;
+  width: 75%;
+  height: 50px;
+}
+
+.black-box {
+  margin: 10% 5%;
+  height: 50%;
+  background-color: black;
+}
+.enter-names-page button {
+  width: 25%;
+  height: 50px;
+  display: block;
+  margin: 5% auto;
+  background-color: gray;
+  color: #FFF;
+  font-size: 24px;
+  border-color: black;
+}
+.enter-names-page p {
+  font-size: 36px;
+}
+.player-one {
+  display: inline-block;
+  width: 40%;
+}
+
+.player-two {
+  display: inline-block;
+  width: 40%;
+}

@@ -7,11 +7,10 @@
 </head>
 
 <body>
-  <!-- first page, play game -->
     <header>
       <h1>Which Bill Murray?</h1>
     </header>
-    <aside class ='aside'>
+    <aside class ='aside hide'>
       <p class="matches">MATCHES</p>
       <p>THIS ROUND</p>
       <p class="num-of-matches">0</p>
@@ -29,8 +28,28 @@
         <p class="num-three-time"></p>
       </section>
     </aside>
-    <main class="game-page">
+    <!--  play game page -->
+
+
+    <main class="game-page hide">
     </main>
+
+
+    <section class="enter-names-page">
+      <section class='black-box'>
+      <section class="player-one">
+      <p>PLAYER ONE'S NAME</p>
+      <input type="text" placeholder="Enter Player One's Name">
+    </section>
+    <section class="player-two">
+      <p>PLAYER TWO'S NAME</p>
+      <input type="text" placeholder="Enter Player Two's Name">
+    </section>
+      <button class="begin-game-button">BEGIN GAME</button>
+    </section>
+    </section>
+
+
   <!-- winner page -->
   <section class="win-page hide">
     <h2>Congratulations</h2>

@@ -18,8 +18,11 @@ var totalSeconds = 0;
 var threeTopTimes = []
 var playAgainButton = document.querySelector('.play-again')
 var gamePage = document.querySelector('.game-page')
+var beginGameButton = document.querySelector('begin-game-button')
+
 
 // event listeners
+beginGameButton.addEventListenter('click', goToGame)
 playAgainButton.addEventListener('click', refreshGamePage)
 gamePage.addEventListener('click', selectCard);
 window.addEventListener('load', callDeck)
@@ -308,4 +311,8 @@ function getTopTimes() {
   }
   threeTopTimes = getTopThreeTimes
   displayTopTimes()
+}
+
+function goToGame() {
+   
 }

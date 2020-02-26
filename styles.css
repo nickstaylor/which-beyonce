@@ -144,6 +144,7 @@ h3 {
   position: absolute;
 }
 
+/* Individual placeholder location and angle */
 .card-placeholder-0 {
   left: 10%;
   top: 3%;

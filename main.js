@@ -317,7 +317,7 @@ function getTopTimes() {
 }
 
 function goToGame() {
-  var twoPlayerPage = document.querySelector('.enter-names-page');
+  var twoPlayerPage = document.querySelector('.black-box');
   var aside = document.querySelector('.aside')
   playerOne = document.querySelector('.player-one-name').value;
   playerTwo = document.querySelector('.player-two-name').value;

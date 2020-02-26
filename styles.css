@@ -54,6 +54,7 @@ div.box {
 
 .game-page{
   position: relative;
+  z-index: 1;
 }
 
 main {
@@ -68,6 +69,7 @@ main {
   grid-row: 2 / 3;
   opacity: 0.7;
   text-align: center;
+  z-index: 10;
 }
 
 h2 {
@@ -313,6 +315,7 @@ aside p {
   grid-column: 1 / 6;
   grid-row: 2 / 3;
   text-align: center;
+  z-index: 0;
 }
 
 .enter-names-page input {

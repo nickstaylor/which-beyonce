@@ -70,7 +70,6 @@ moveToMatched() {
   this.matchedCards.push(selectedTwo)
   this.selectedCards = [];
   this.checkDivs();
-
   increaseMatches()
   }
 

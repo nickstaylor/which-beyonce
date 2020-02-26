@@ -22,6 +22,7 @@ var beginGameButton = document.querySelector('.begin-game-button')
 var playerNameLineOne = document.querySelector('.player-name-line1');
 var playerOne;
 var playerTwo;
+var gameNumber = 0;
 
 
 // event listeners
@@ -134,7 +135,6 @@ function switchToCongrats() {
   aside.classList.add('hide')
   gamePage.classList.add('hide');
   winPage.classList.remove('hide')
-  window.clearTimeout(timer);
 }
 
 // timer
@@ -157,6 +157,7 @@ function displayTime() {
     timePlayed.innerHTML = `${minutes} MIN ${seconds} SEC`
   }
   findTopTimes()
+  window.clearTimeout(timer);
 }
 
 // refreshes game page for new game
@@ -317,7 +318,7 @@ function getTopTimes() {
 }
 
 function goToGame() {
-  var twoPlayerPage = document.querySelector('.enter-names-page');
+  var twoPlayerPage = document.querySelector('.black-box');
   var aside = document.querySelector('.aside')
   playerOne = document.querySelector('.player-one-name').value;
   playerTwo = document.querySelector('.player-two-name').value;
@@ -327,12 +328,25 @@ function goToGame() {
   playerNameLineOne.innerHTML = `${playerOne}'s`;
 }
 
-function switchToCongrats() {
-  var winPage = document.querySelector('.win-page')
-  var aside = document.querySelector('.aside')
-  displayTime();
-  aside.classList.add('hide')
-  gamePage.classList.add('hide');
-  winPage.classList.remove('hide')
-  window.clearTimeout(timer);
-}
+// start of two player functions...did not get far enough for them to all be incorporated.
+
+// function increaseMatches() {
+//   var numOfMatchesArea = document.querySelector('.num-of-matches')
+//   var numOfMatches = deck.matchedCards.length / 2
+//   numOfMatchesArea.innerHTML = `${numOfMatches}`
+//   displayMatchedCards();
+//   if (numOfMatches === 5)  {
+//     switchGames()
+//   }
+// }
+
+// function switchGames() {
+//   gameNumber++
+//   if (gameNumber === 1) {
+//   displayTime()
+//   refreshGamePage()
+// }
+//   else {
+//     switchToCongrats()
+//   }
+// }

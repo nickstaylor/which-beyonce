@@ -18,19 +18,22 @@ var totalSeconds = 0;
 var threeTopTimes = []
 var playAgainButton = document.querySelector('.play-again')
 var gamePage = document.querySelector('.game-page')
-var beginGameButton = document.querySelector('begin-game-button')
+var beginGameButton = document.querySelector('.begin-game-button')
+var playerNameLineOne = document.querySelector('.player-name-line1');
+var playerOne;
+var playerTwo;
 
 
 // event listeners
-beginGameButton.addEventListenter('click', goToGame)
+beginGameButton.addEventListener('click', goToGame)
 playAgainButton.addEventListener('click', refreshGamePage)
 gamePage.addEventListener('click', selectCard);
 window.addEventListener('load', callDeck)
 
 function callDeck() {
- // clearStorage()
-deck.addCardsToDeck();
-getTopTimes()
+  // clearStorage()
+  deck.addCardsToDeck();
+  getTopTimes()
 }
 
 // function for if wrong cards are selected...will wait 2 seconds then flip cards back over...
@@ -87,7 +90,7 @@ function pushCardToSelected() {
 function pushDivToSelected() {
   var currentCard = event.target.closest('.flip-container')
   deck.selectedDivs.push(currentCard)
-  }
+}
 
 function removeDivFromSelected() {
   var currentCard = event.target.closest('.flip-container')
@@ -223,11 +226,11 @@ function displayTopTimes() {
 
 //moves matched card picture to side bar
 function displayMatchedCards() {
-    var matchedCard0 = document.querySelector('.matched-1');
-    var matchedCard2 = document.querySelector('.matched-2');
-    var matchedCard4 = document.querySelector('.matched-3');
-    var matchedCard6 = document.querySelector('.matched-4');
-    var matchedCard8 = document.querySelector('.matched-5');
+  var matchedCard0 = document.querySelector('.matched-1');
+  var matchedCard2 = document.querySelector('.matched-2');
+  var matchedCard4 = document.querySelector('.matched-3');
+  var matchedCard6 = document.querySelector('.matched-4');
+  var matchedCard8 = document.querySelector('.matched-5');
   // attempt to refactor, not working however.
   // for (var i = 0; i < deck.matchedCards.length; i+= 2) {
   //   console.log(deck.matchedCards);
@@ -314,5 +317,22 @@ function getTopTimes() {
 }
 
 function goToGame() {
-   
+  var twoPlayerPage = document.querySelector('.enter-names-page');
+  var aside = document.querySelector('.aside')
+  playerOne = document.querySelector('.player-one-name').value;
+  playerTwo = document.querySelector('.player-two-name').value;
+  twoPlayerPage.classList.add('hide')
+  aside.classList.remove('hide')
+  gamePage.classList.remove('hide')
+  playerNameLineOne.innerHTML = `${playerOne}`;
+}
+
+function switchToCongrats() {
+  var winPage = document.querySelector('.win-page')
+  var aside = document.querySelector('.aside')
+  displayTime();
+  aside.classList.add('hide')
+  gamePage.classList.add('hide');
+  winPage.classList.remove('hide')
+  window.clearTimeout(timer);
 }

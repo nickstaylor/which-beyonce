@@ -15,7 +15,7 @@ var lockCards = false;
 var cardsClicked = 0;
 var timer;
 var totalSeconds = 0;
-var threeTopTimes = []
+var threeTopTimes = [];
 var playAgainButton = document.querySelector('.play-again')
 var gamePage = document.querySelector('.game-page')
 var beginGameButton = document.querySelector('.begin-game-button')
@@ -324,7 +324,7 @@ function goToGame() {
   twoPlayerPage.classList.add('hide')
   aside.classList.remove('hide')
   gamePage.classList.remove('hide')
-  playerNameLineOne.innerHTML = `${playerOne}`;
+  playerNameLineOne.innerHTML = `${playerOne}'s`;
 }
 
 function switchToCongrats() {

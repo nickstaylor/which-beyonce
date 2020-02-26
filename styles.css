@@ -28,10 +28,12 @@ aside {
   background-color: black;
   grid-area: aside;
   text-align: center;
+  z-index: 1;
 }
 
 div * {
   pointer-events: none;
+
 }
 
 div.box {
@@ -39,15 +41,15 @@ div.box {
 }
 
 .box:hover .front {
-  cursor: pointer;
-  border: 3px solid #FFF;
-  text-align: center;
-  height: 175px;
-  width: 125px;
-  display: inline-block;
-  color: #FFF;
   background-color: black;
+  border: 3px solid #FFF;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
   font-size: 50px;
+  height: 175px;
+  text-align: center;
+  width: 125px;
 }
 
 .game-page{
@@ -62,60 +64,60 @@ main {
 .win-page {
   background-image: url("assets/images/Bill-Murray-Space-Jam.jpeg");
   filter: grayscale(50%);
-  opacity: 0.7;
   grid-column: 1 / 6;
   grid-row: 2 / 3;
+  opacity: 0.7;
   text-align: center;
 }
 
 h2 {
+  color: white;
   font-size: 72px;
   margin: 125px 0px 50px 0px;
-  color: white;
 }
 
 h3 {
+  color: white;
   font-size: 42px;
   font-weight: normal;
-  color: white;
 }
 
 .time-played {
+  color: white;
   /* display: inline-block; */
   font-size: 50px;
-  color: white;
 }
 
 .play-again,
 .new-game {
-  font-size: 24px;
-  color: white;
   background-color: black;
-  padding: 20px 40px;
-  margin: 0px 40px;
+  color: white;
   cursor: pointer;
+  font-size: 24px;
+  margin: 0px 40px;
+  padding: 20px 40px;
 }
 
 /* .play-again, */
-button:hover {
-  font-size: 24px;
-  color: black;
+.win-page button:hover {
   background-color: #FFF;
-  padding: 20px 40px;
-  margin: 0px 40px;
+  color: black;
   cursor: pointer;
+  font-size: 24px;
+  margin: 0px 40px;
+  padding: 20px 40px;
 }
 
+
 .box {
-  border: 3px solid black;
-  text-align: center;
-  height: 175px;
-  width: 125px;
-  display: inline-block;
-  color: black;
   background-color: #FFF;
+  border: 3px solid black;
+  color: black;
+  display: inline-block;
   font-size: 50px;
-  /* padding-top: 30px;  */
+  height: 175px;
+  text-align: center;
+  width: 125px;
 }
 
 
@@ -125,79 +127,83 @@ button:hover {
 }
 
 /* individual placeholders positioning */
-.card-placeholder-0 {
+.card-placeholder-0,
+.card-placeholder-1,
+.card-placeholder-2,
+.card-placeholder-3,
+.card-placeholder-4,
+.card-placeholder-5,
+.card-placeholder-6,
+.card-placeholder-7,
+.card-placeholder-8,
+.card-placeholder-9 {
   position: absolute;
-  top: 3%;
+}
+
+
+.card-placeholder-0 {
   left: 10%;
+  top: 3%;
   transform: rotate(10deg);
 }
 
 .card-placeholder-1 {
-  position: absolute;
-  top: 7%;
   left: 33%;
+  top: 7%;
   transform: rotate(-10deg);
 }
 
 .card-placeholder-2 {
-  position: absolute;
-  top: 5%;
   left: 55%;
+  top: 5%;
   transform: rotate(-20deg)
 }
 
 .card-placeholder-3 {
-  position: absolute;
-  top: 8%;
   left: 85%;
+  top: 8%;
   transform: rotate(15deg)
 }
 
 .card-placeholder-4 {
-  position: absolute;
-  top: 35%;
   left: 20%;
+  top: 35%;
   transform: rotate(15deg)
 }
 
 .card-placeholder-5 {
-  position: absolute;
-  top: 38%;
   left: 50%;
+  top: 38%;
   transform: rotate(-10deg);
 }
 
 .card-placeholder-6 {
-  position: absolute;
-  top: 30%;
   left: 70%;
+  top: 30%;
   transform: rotate(-15deg);
 }
 
 .card-placeholder-7 {
-  position: absolute;
-  top: 55%;
   left: 7%;
+  top: 55%;
   transform: rotate(-25deg);
 }
 
 .card-placeholder-8 {
-  position: absolute;
-  top: 55%;
   left: 35%;
+  top: 55%;
   transform: rotate(20deg);
 }
 
 .card-placeholder-9 {
-  position: absolute;
-  top: 55%;
   left: 80%;
+  top: 55%;
   transform: rotate(-20deg);
 }
 
 
 .num-of-matches{
-  font-size: 100px;
+  font-size: 80px;
   font-weight: bold;
 }
 
@@ -206,7 +212,7 @@ aside p {
 }
 
 .matches {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .matched-cards {
@@ -216,8 +222,8 @@ aside p {
 
 
 .top-times{
+  margin-top: 20px;
   text-align: center;
-  margin-top: 40px;
 }
 
 .top-times p {
@@ -225,58 +231,46 @@ aside p {
 }
 
 .matched-cards-area div {
-  border: 3px solid black;
-  text-align: center;
-  height: 90px;
-  width: 70px;
-  display: inline-block;
-  color: black;
   background-color: gray;
+  border: 3px solid black;
+  color: black;
+  display: inline-block;
   font-size: 50px;
-  /* margin: 0% 0%; */
+  height: 90px;
+  text-align: center;
+  width: 70px;
 }
 
 /* classes to add picture */
-.caddyshack {
-  background-image: url("assets/images/Caddyshack.jpg");
+.caddyshack,
+.ghostbusters,
+.kingpin,
+.lifeaquatic,
+.rushmore {
   height: 175px;
   width: 125px;
+}
+
+/* Image sources */
+.caddyshack {
+  background-image: url("assets/images/Caddyshack.jpg");
 }
 
 .ghostbusters {
   background-image: url("assets/images/Ghostbusters.jpg");
-  height: 175px;
-  width: 125px;
 }
 
 .kingpin {
   background-image: url("assets/images/Kingpin.jpg");
-  height: 175px;
-  width: 125px;
 }
 
 .lifeaquatic {
   background-image: url("assets/images/LifeAquatic.jpg");
-  height: 175px;
-  width: 125px;
 }
 
 .rushmore {
   background-image: url("assets/images/Rushmore.jpeg");
-  height: 175px;
-  width: 125px;
 }
-
-/* .negZ {
-  z-index: -1;
-}
-.z1 {
-  z-index: 1;
-}
-
-.z2 {
-  z-index: 2;
-} */
 
 .hide {
   display: none;
@@ -289,24 +283,21 @@ aside p {
 
 /* flip speed goes here */
 .flipper {
-	transition: 0.6s;
+  position: relative;
 	transform-style: preserve-3d;
-
-	position: relative;
+	transition: 0.6s;
 }
 
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
+	left: 0;
 	position: absolute;
 	top: 0;
-	left: 0;
 }
 
 /* front pane, placed above back */
 .front {
-	/* z-index: 2; */
-	/* for firefox 31 */
 	transform: rotateY(0deg);
 }
 
@@ -318,41 +309,55 @@ aside p {
 .enter-names-page {
   background-color: lightgray;
   color: #FFF;
+  display: inline-block;
   grid-column: 1 / 6;
   grid-row: 2 / 3;
   text-align: center;
-  display: inline-block;
 }
+
 .enter-names-page input {
   font-size: 24px;
-  width: 75%;
   height: 50px;
+  width: 75%;
 }
 
 .black-box {
-  margin: 10% 5%;
-  height: 50%;
   background-color: black;
+  height: 50%;
+  margin: 10% 5%;
 }
 .enter-names-page button {
-  width: 25%;
-  height: 50px;
-  display: block;
-  margin: 5% auto;
   background-color: gray;
-  color: #FFF;
-  font-size: 24px;
   border-color: black;
+  color: #FFF;
+  display: block;
+  font-size: 24px;
+  height: 50px;
+  margin: 5% auto;
+  width: 25%;
 }
+
+.enter-names-page button:hover {
+  background-color: #FFF;
+  color: gray;
+  cursor: pointer;
+}
+
 .enter-names-page p {
   font-size: 36px;
 }
-.player-one {
+
+.player-one,
+.player-two {
   display: inline-block;
   width: 40%;
 }
 
-.player-two {
-  display: inline-block;
-  width: 40%;
+.player-name-line2,
+.player-name-line1 {
+  font-size: 40px;
+}
+
+.player-name-line1 {
+    margin-top: 15px;
 }

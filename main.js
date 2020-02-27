@@ -20,9 +20,9 @@ var playAgainButton = document.querySelector('.play-again')
 var gamePage = document.querySelector('.game-page')
 var beginGameButton = document.querySelector('.begin-game-button')
 var playerNameLineOne = document.querySelector('.player-name-line1');
-var playerOne;
-var playerTwo;
-var gameNumber = 0;
+// var playerOne;
+// var playerTwo;
+// var gameNumber = 0;
 
 
 // event listeners
